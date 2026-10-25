@@ -1,0 +1,720 @@
+#VRML_SIM R2025a utf8
+# Generato da scripts/genera_laboratorio.py. Unita': metri, z verso l'alto.
+EXTERNPROTO "../protos/DocArm5.proto"
+EXTERNPROTO "../protos/DocLabGripper.proto"
+WorldInfo { title "DOC | Laboratorio: trasferimento campioni" basicTimeStep 16 }
+DEF CAMERA Viewpoint { orientation -0.144701969 0.081169972 0.986140343 2.131043110 position 0.94 -1.18 1.42
+  fieldOfView 0.92 exposure 1.25 ambientOcclusionRadius 0.12 bloomThreshold -1 }
+Background { skyColor [0.52 0.54 0.53] luminosity 1.35
+  backIrradianceUrl ["../protos/vendor/webots/projects/default/worlds/textures/cubic/factory_back.hdr"]
+  bottomIrradianceUrl ["../protos/vendor/webots/projects/default/worlds/textures/cubic/factory_bottom.hdr"]
+  frontIrradianceUrl ["../protos/vendor/webots/projects/default/worlds/textures/cubic/factory_front.hdr"]
+  leftIrradianceUrl ["../protos/vendor/webots/projects/default/worlds/textures/cubic/factory_left.hdr"]
+  rightIrradianceUrl ["../protos/vendor/webots/projects/default/worlds/textures/cubic/factory_right.hdr"]
+  topIrradianceUrl ["../protos/vendor/webots/projects/default/worlds/textures/cubic/factory_top.hdr"]
+}
+# Luce principale dall'alto; riempimenti senza ombre per schiarire i dettagli.
+DEF LAB_KEY DirectionalLight { direction -0.6 0.7 -1.8 intensity 1.7 ambientIntensity 0.025
+  color 1 1 1 castShadows TRUE }
+DEF LAB_FILL DirectionalLight { direction 0.6 -0.4 -1 intensity 0.50 ambientIntensity 0
+  color 0.93 0.97 1 castShadows FALSE }
+DEF LAB_FRONT DirectionalLight { direction -0.82 1.41 -0.36 intensity 0.25 ambientIntensity 0
+  color 1 1 1 castShadows FALSE }
+Solid { translation 0.25 0 0.715
+      children [ Shape { appearance PBRAppearance { baseColor 0.25 0.26 0.27 roughness 0.45 metalness 0 baseColorMap ImageTexture { url ["../textures/epoxy_color.png"] }
+          roughnessMap ImageTexture { url ["../textures/epoxy_rough.png"] }
+          normalMap ImageTexture { url ["../textures/epoxy_normal.png"] } normalMapFactor 0.35 }
+        geometry Box { size 1.2 0.95 0.07 } } ]
+      boundingObject Box { size 1.2 0.95 0.07 } name "banco" }
+Solid { translation 0 0 0.76
+      children [ Shape { appearance PBRAppearance { baseColor 0.30 0.31 0.32 roughness 0.31 metalness 1  }
+        geometry Box { size 0.17 0.17 0.02 } } ]
+      boundingObject Box { size 0.17 0.17 0.02 } name "base_braccio" }
+Pose { translation -0.066 -0.066 0.771 children [ Shape {
+      appearance PBRAppearance { baseColor 0.13 0.14 0.15 roughness 0.27 metalness 1  }
+      geometry Cylinder { radius 0.006 height 0.002 subdivision 64 } } ] }
+Pose { translation -0.066 0.066 0.771 children [ Shape {
+      appearance PBRAppearance { baseColor 0.13 0.14 0.15 roughness 0.27 metalness 1  }
+      geometry Cylinder { radius 0.006 height 0.002 subdivision 64 } } ] }
+Pose { translation 0.066 -0.066 0.771 children [ Shape {
+      appearance PBRAppearance { baseColor 0.13 0.14 0.15 roughness 0.27 metalness 1  }
+      geometry Cylinder { radius 0.006 height 0.002 subdivision 64 } } ] }
+Pose { translation 0.066 0.066 0.771 children [ Shape {
+      appearance PBRAppearance { baseColor 0.13 0.14 0.15 roughness 0.27 metalness 1  }
+      geometry Cylinder { radius 0.006 height 0.002 subdivision 64 } } ] }
+Solid { translation -0.25 -0.36 0.35
+      children [ Shape { appearance PBRAppearance { baseColor 0.50 0.51 0.52 roughness 0.45 metalness 1 baseColorMap ImageTexture { url ["../textures/steel_color.png"] }
+          roughnessMap ImageTexture { url ["../textures/steel_rough.png"] }
+          normalMap ImageTexture { url ["../textures/steel_normal.png"] } normalMapFactor 0.35 }
+        geometry Box { size 0.045 0.045 0.70 } } ]
+      boundingObject Box { size 0.045 0.045 0.70 } name "gamba_-0.25_-0.36" }
+Pose { translation -0.25 -0.36 0.017 children [ Shape {
+      appearance PBRAppearance { baseColor 0.055 0.055 0.052 roughness 0.85 metalness 0  }
+      geometry Cylinder { radius 0.033 height 0.034 subdivision 64 } } ] }
+Solid { translation -0.25 0.36 0.35
+      children [ Shape { appearance PBRAppearance { baseColor 0.50 0.51 0.52 roughness 0.45 metalness 1 baseColorMap ImageTexture { url ["../textures/steel_color.png"] }
+          roughnessMap ImageTexture { url ["../textures/steel_rough.png"] }
+          normalMap ImageTexture { url ["../textures/steel_normal.png"] } normalMapFactor 0.35 }
+        geometry Box { size 0.045 0.045 0.70 } } ]
+      boundingObject Box { size 0.045 0.045 0.70 } name "gamba_-0.25_0.36" }
+Pose { translation -0.25 0.36 0.017 children [ Shape {
+      appearance PBRAppearance { baseColor 0.055 0.055 0.052 roughness 0.85 metalness 0  }
+      geometry Cylinder { radius 0.033 height 0.034 subdivision 64 } } ] }
+Solid { translation 0.75 -0.36 0.35
+      children [ Shape { appearance PBRAppearance { baseColor 0.50 0.51 0.52 roughness 0.45 metalness 1 baseColorMap ImageTexture { url ["../textures/steel_color.png"] }
+          roughnessMap ImageTexture { url ["../textures/steel_rough.png"] }
+          normalMap ImageTexture { url ["../textures/steel_normal.png"] } normalMapFactor 0.35 }
+        geometry Box { size 0.045 0.045 0.70 } } ]
+      boundingObject Box { size 0.045 0.045 0.70 } name "gamba_0.75_-0.36" }
+Pose { translation 0.75 -0.36 0.017 children [ Shape {
+      appearance PBRAppearance { baseColor 0.055 0.055 0.052 roughness 0.85 metalness 0  }
+      geometry Cylinder { radius 0.033 height 0.034 subdivision 64 } } ] }
+Solid { translation 0.75 0.36 0.35
+      children [ Shape { appearance PBRAppearance { baseColor 0.50 0.51 0.52 roughness 0.45 metalness 1 baseColorMap ImageTexture { url ["../textures/steel_color.png"] }
+          roughnessMap ImageTexture { url ["../textures/steel_rough.png"] }
+          normalMap ImageTexture { url ["../textures/steel_normal.png"] } normalMapFactor 0.35 }
+        geometry Box { size 0.045 0.045 0.70 } } ]
+      boundingObject Box { size 0.045 0.045 0.70 } name "gamba_0.75_0.36" }
+Pose { translation 0.75 0.36 0.017 children [ Shape {
+      appearance PBRAppearance { baseColor 0.055 0.055 0.052 roughness 0.85 metalness 0  }
+      geometry Cylinder { radius 0.033 height 0.034 subdivision 64 } } ] }
+Pose { translation 0.25 -0.36 0.17
+      children [ Shape { appearance PBRAppearance { baseColor 0.50 0.51 0.52 roughness 0.45 metalness 1 baseColorMap ImageTexture { url ["../textures/steel_color.png"] }
+          roughnessMap ImageTexture { url ["../textures/steel_rough.png"] }
+          normalMap ImageTexture { url ["../textures/steel_normal.png"] } normalMapFactor 0.35 }
+        geometry Box { size 1.0 0.03 0.03 } } ]
+        }
+Pose { translation 0.25 0.36 0.17
+      children [ Shape { appearance PBRAppearance { baseColor 0.50 0.51 0.52 roughness 0.45 metalness 1 baseColorMap ImageTexture { url ["../textures/steel_color.png"] }
+          roughnessMap ImageTexture { url ["../textures/steel_rough.png"] }
+          normalMap ImageTexture { url ["../textures/steel_normal.png"] } normalMapFactor 0.35 }
+        geometry Box { size 1.0 0.03 0.03 } } ]
+        }
+Solid { translation 0 0 -0.015
+      children [ Shape { appearance PBRAppearance { baseColor 0.57 0.56 0.54 roughness 0.45 metalness 0 baseColorMap ImageTexture { url ["../textures/floor_color.png"] }
+          roughnessMap ImageTexture { url ["../textures/floor_rough.png"] }
+          normalMap ImageTexture { url ["../textures/floor_normal.png"] } normalMapFactor 0.35 }
+        geometry Box { size 5 5 0.03 } } ]
+      boundingObject Box { size 5 5 0.03 } name "pavimento" }
+Solid { translation 0.0 1.25 1.35
+      children [ Shape { appearance PBRAppearance { baseColor 0.82 0.84 0.83 roughness 0.9 metalness 0  }
+        geometry Box { size 4.5 0.10 2.7 } } ]
+      boundingObject Box { size 4.5 0.10 2.7 } name "parete_fondo" }
+Solid { translation -1.15 0.10 1.35
+      children [ Shape { appearance PBRAppearance { baseColor 0.85 0.86 0.84 roughness 0.9 metalness 0  }
+        geometry Box { size 0.10 2.3 2.7 } } ]
+      boundingObject Box { size 0.10 2.3 2.7 } name "parete_laterale" }
+Pose { translation 0.10 0.88 0.79
+      children [ Shape { appearance PBRAppearance { baseColor 0.25 0.26 0.27 roughness 0.45 metalness 0 baseColorMap ImageTexture { url ["../textures/epoxy_color.png"] }
+          roughnessMap ImageTexture { url ["../textures/epoxy_rough.png"] }
+          normalMap ImageTexture { url ["../textures/epoxy_normal.png"] } normalMapFactor 0.35 }
+        geometry Box { size 2.1 0.55 0.04 } } ]
+        }
+Pose { translation 0.10 0.90 0.395
+      children [ Shape { appearance PBRAppearance { baseColor 0.64 0.65 0.62 roughness 0.62 metalness 0  }
+        geometry Box { size 2.0 0.46 0.72 } } ]
+        }
+Pose { translation -0.65 0.664 0.40
+      children [ Shape { appearance PBRAppearance { baseColor 0.84 0.85 0.83 roughness 0.48 metalness 0  }
+        geometry Box { size 0.483 0.015 0.68 } } ]
+        }
+Pose { translation -0.47000000000000003 0.646 0.54
+      children [ Shape { appearance PBRAppearance { baseColor 0.37 0.38 0.39 roughness 0.27 metalness 1  }
+        geometry Box { size 0.012 0.015 0.13 } } ]
+        }
+Pose { translation -0.15 0.664 0.40
+      children [ Shape { appearance PBRAppearance { baseColor 0.84 0.85 0.83 roughness 0.48 metalness 0  }
+        geometry Box { size 0.483 0.015 0.68 } } ]
+        }
+Pose { translation 0.03 0.646 0.54
+      children [ Shape { appearance PBRAppearance { baseColor 0.37 0.38 0.39 roughness 0.27 metalness 1  }
+        geometry Box { size 0.012 0.015 0.13 } } ]
+        }
+Pose { translation 0.35 0.664 0.40
+      children [ Shape { appearance PBRAppearance { baseColor 0.84 0.85 0.83 roughness 0.48 metalness 0  }
+        geometry Box { size 0.483 0.015 0.68 } } ]
+        }
+Pose { translation 0.53 0.646 0.54
+      children [ Shape { appearance PBRAppearance { baseColor 0.37 0.38 0.39 roughness 0.27 metalness 1  }
+        geometry Box { size 0.012 0.015 0.13 } } ]
+        }
+Pose { translation 0.85 0.664 0.40
+      children [ Shape { appearance PBRAppearance { baseColor 0.84 0.85 0.83 roughness 0.48 metalness 0  }
+        geometry Box { size 0.483 0.015 0.68 } } ]
+        }
+Pose { translation 1.03 0.646 0.54
+      children [ Shape { appearance PBRAppearance { baseColor 0.37 0.38 0.39 roughness 0.27 metalness 1  }
+        geometry Box { size 0.012 0.015 0.13 } } ]
+        }
+Pose { translation 0.10 1.188 0.065
+      children [ Shape { appearance PBRAppearance { baseColor 0.24 0.25 0.24 roughness 0.45 metalness 0  }
+        geometry Box { size 4.2 0.02 0.13 } } ]
+        }
+Pose { translation -1.088 0.10 0.065
+      children [ Shape { appearance PBRAppearance { baseColor 0.24 0.25 0.24 roughness 0.45 metalness 0  }
+        geometry Box { size 0.02 2.3 0.13 } } ]
+        }
+Pose { translation -0.72 1.185 1.08
+      children [ Shape { appearance PBRAppearance { baseColor 0.83 0.83 0.79 roughness 0.45 metalness 0  }
+        geometry Box { size 0.14 0.018 0.08 } } ]
+        }
+Pose { translation -0.755 1.174 1.08
+      children [ Shape { appearance PBRAppearance { baseColor 0.10 0.10 0.10 roughness 0.45 metalness 0  }
+        geometry Box { size 0.015 0.002 0.007 } } ]
+        }
+Pose { translation -0.6849999999999999 1.174 1.08
+      children [ Shape { appearance PBRAppearance { baseColor 0.10 0.10 0.10 roughness 0.45 metalness 0  }
+        geometry Box { size 0.015 0.002 0.007 } } ]
+        }
+Pose { translation 0.74 1.185 1.08
+      children [ Shape { appearance PBRAppearance { baseColor 0.83 0.83 0.79 roughness 0.45 metalness 0  }
+        geometry Box { size 0.14 0.018 0.08 } } ]
+        }
+Pose { translation 0.705 1.174 1.08
+      children [ Shape { appearance PBRAppearance { baseColor 0.10 0.10 0.10 roughness 0.45 metalness 0  }
+        geometry Box { size 0.015 0.002 0.007 } } ]
+        }
+Pose { translation 0.775 1.174 1.08
+      children [ Shape { appearance PBRAppearance { baseColor 0.10 0.10 0.10 roughness 0.45 metalness 0  }
+        geometry Box { size 0.015 0.002 0.007 } } ]
+        }
+Pose { translation 0.73 0.86 0.828
+      children [ Shape { appearance PBRAppearance { baseColor 0.21 0.22 0.21 roughness 0.5 metalness 0  }
+        geometry Box { size 0.22 0.11 0.035 } } ]
+        }
+Pose { translation 0.6500 0.855 0.867 children [ Shape {
+      appearance PBRAppearance { baseColor 0.60 0.64 0.63 roughness 0.2 metalness 0  }
+      geometry Cylinder { radius 0.008 height 0.085 subdivision 64 } } ] }
+Pose { translation 0.6500 0.855 0.910 children [ Shape {
+      appearance PBRAppearance { baseColor 0.13 0.18 0.23 roughness 0.45 metalness 0  }
+      geometry Cylinder { radius 0.009 height 0.01 subdivision 64 } } ] }
+Pose { translation 0.6890 0.855 0.867 children [ Shape {
+      appearance PBRAppearance { baseColor 0.60 0.64 0.63 roughness 0.2 metalness 0  }
+      geometry Cylinder { radius 0.008 height 0.085 subdivision 64 } } ] }
+Pose { translation 0.6890 0.855 0.910 children [ Shape {
+      appearance PBRAppearance { baseColor 0.13 0.18 0.23 roughness 0.45 metalness 0  }
+      geometry Cylinder { radius 0.009 height 0.01 subdivision 64 } } ] }
+Pose { translation 0.7280 0.855 0.867 children [ Shape {
+      appearance PBRAppearance { baseColor 0.60 0.64 0.63 roughness 0.2 metalness 0  }
+      geometry Cylinder { radius 0.008 height 0.085 subdivision 64 } } ] }
+Pose { translation 0.7280 0.855 0.910 children [ Shape {
+      appearance PBRAppearance { baseColor 0.13 0.18 0.23 roughness 0.45 metalness 0  }
+      geometry Cylinder { radius 0.009 height 0.01 subdivision 64 } } ] }
+Pose { translation 0.7670 0.855 0.867 children [ Shape {
+      appearance PBRAppearance { baseColor 0.60 0.64 0.63 roughness 0.2 metalness 0  }
+      geometry Cylinder { radius 0.008 height 0.085 subdivision 64 } } ] }
+Pose { translation 0.7670 0.855 0.910 children [ Shape {
+      appearance PBRAppearance { baseColor 0.13 0.18 0.23 roughness 0.45 metalness 0  }
+      geometry Cylinder { radius 0.009 height 0.01 subdivision 64 } } ] }
+Pose { translation 0.8060 0.855 0.867 children [ Shape {
+      appearance PBRAppearance { baseColor 0.60 0.64 0.63 roughness 0.2 metalness 0  }
+      geometry Cylinder { radius 0.008 height 0.085 subdivision 64 } } ] }
+Pose { translation 0.8060 0.855 0.910 children [ Shape {
+      appearance PBRAppearance { baseColor 0.13 0.18 0.23 roughness 0.45 metalness 0  }
+      geometry Cylinder { radius 0.009 height 0.01 subdivision 64 } } ] }
+Pose { translation -0.62 0.89 0.831
+      children [ Shape { appearance PBRAppearance { baseColor 0.58 0.60 0.59 roughness 0.35 metalness 0  }
+        geometry Box { size 0.13 0.13 0.04 } } ]
+        }
+Pose { translation -0.62 0.92 0.973
+      children [ Shape { appearance PBRAppearance { baseColor 0.35 0.36 0.37 roughness 0.27 metalness 1  }
+        geometry Box { size 0.012 0.018 0.245 } } ]
+        }
+Pose { translation -0.65 0.895 0.986 children [ Shape {
+      appearance PBRAppearance { baseColor 0.80 0.81 0.77 roughness 0.31 metalness 0  }
+      geometry Cylinder { radius 0.008 height 0.15 subdivision 64 } } ] }
+Pose { translation -0.65 0.895 0.89 children [ Shape {
+      appearance PBRAppearance { baseColor 0.48 0.53 0.53 roughness 0.24 metalness 0  }
+      geometry Cylinder { radius 0.003 height 0.06 subdivision 64 } } ] }
+Pose { translation -0.62 0.895 0.986 children [ Shape {
+      appearance PBRAppearance { baseColor 0.80 0.81 0.77 roughness 0.31 metalness 0  }
+      geometry Cylinder { radius 0.008 height 0.15 subdivision 64 } } ] }
+Pose { translation -0.62 0.895 0.89 children [ Shape {
+      appearance PBRAppearance { baseColor 0.48 0.53 0.53 roughness 0.24 metalness 0  }
+      geometry Cylinder { radius 0.003 height 0.06 subdivision 64 } } ] }
+Pose { translation -0.59 0.895 0.986 children [ Shape {
+      appearance PBRAppearance { baseColor 0.80 0.81 0.77 roughness 0.31 metalness 0  }
+      geometry Cylinder { radius 0.008 height 0.15 subdivision 64 } } ] }
+Pose { translation -0.59 0.895 0.89 children [ Shape {
+      appearance PBRAppearance { baseColor 0.48 0.53 0.53 roughness 0.24 metalness 0  }
+      geometry Cylinder { radius 0.003 height 0.06 subdivision 64 } } ] }
+Pose { translation 0.37 0.045 0.751
+      children [ Shape { appearance PBRAppearance { baseColor 0.105 0.11 0.105 roughness 0.88 metalness 0  }
+        geometry Box { size 0.28 0.58 0.002 } } ]
+        }
+Pose { translation 0.59 -0.40 0.7507
+      children [ Shape { appearance PBRAppearance {
+        baseColorMap ImageTexture { url ["../textures/titolo.png"] }
+        roughness 1 metalness 0 } geometry Plane { size 0.22 0.038 } } ] }DEF SUPPORTO_A Solid { translation 0.32 -0.15 0.753
+      children [ Shape { appearance PBRAppearance { baseColor 0.58 0.59 0.60 roughness 0.32 metalness 1  }
+        geometry Cylinder { radius 0.038 height 0.006 subdivision 64 } }
+        Pose { translation 0 0 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.075 0.078 0.080 roughness 0.84 metalness 0  }
+      geometry Cylinder { radius 0.023 height 0.0007 subdivision 64 } } ] }
+Pose { translation 0.031 0.0 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.12 0.13 0.14 roughness 0.3 metalness 1  }
+      geometry Cylinder { radius 0.0025 height 0.0008 subdivision 64 } } ] }
+Pose { translation 0.031 0.0 0.003
+      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.017 0.018 roughness 0.45 metalness 0  }
+        geometry Box { size 0.0026 0.0004 0.0002 } } ]
+        }
+Pose { translation -0.015499999999999995 0.0268467875173176 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.12 0.13 0.14 roughness 0.3 metalness 1  }
+      geometry Cylinder { radius 0.0025 height 0.0008 subdivision 64 } } ] }
+Pose { translation -0.015499999999999995 0.0268467875173176 0.003
+      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.017 0.018 roughness 0.45 metalness 0  }
+        geometry Box { size 0.0026 0.0004 0.0002 } } ]
+        }
+Pose { translation -0.015500000000000014 -0.02684678751731759 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.12 0.13 0.14 roughness 0.3 metalness 1  }
+      geometry Cylinder { radius 0.0025 height 0.0008 subdivision 64 } } ] }
+Pose { translation -0.015500000000000014 -0.02684678751731759 0.003
+      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.017 0.018 roughness 0.45 metalness 0  }
+        geometry Box { size 0.0026 0.0004 0.0002 } } ]
+        }
+ ] name "supporto_a"
+      boundingObject Cylinder { radius 0.038 height 0.006 }
+    }
+Pose { translation 0.41200000000000003 -0.15 0.7522
+      children [ Shape { appearance PBRAppearance {
+        baseColorMap ImageTexture { url ["../textures/supporto_a.png"] }
+        roughness 1 metalness 0 } geometry Plane { size 0.070 0.018 } } ] }DEF SUPPORTO_B Solid { translation 0.32 -0.03 0.753
+      children [ Shape { appearance PBRAppearance { baseColor 0.58 0.59 0.60 roughness 0.32 metalness 1  }
+        geometry Cylinder { radius 0.038 height 0.006 subdivision 64 } }
+        Pose { translation 0 0 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.075 0.078 0.080 roughness 0.84 metalness 0  }
+      geometry Cylinder { radius 0.023 height 0.0007 subdivision 64 } } ] }
+Pose { translation 0.031 0.0 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.12 0.13 0.14 roughness 0.3 metalness 1  }
+      geometry Cylinder { radius 0.0025 height 0.0008 subdivision 64 } } ] }
+Pose { translation 0.031 0.0 0.003
+      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.017 0.018 roughness 0.45 metalness 0  }
+        geometry Box { size 0.0026 0.0004 0.0002 } } ]
+        }
+Pose { translation -0.015499999999999995 0.0268467875173176 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.12 0.13 0.14 roughness 0.3 metalness 1  }
+      geometry Cylinder { radius 0.0025 height 0.0008 subdivision 64 } } ] }
+Pose { translation -0.015499999999999995 0.0268467875173176 0.003
+      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.017 0.018 roughness 0.45 metalness 0  }
+        geometry Box { size 0.0026 0.0004 0.0002 } } ]
+        }
+Pose { translation -0.015500000000000014 -0.02684678751731759 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.12 0.13 0.14 roughness 0.3 metalness 1  }
+      geometry Cylinder { radius 0.0025 height 0.0008 subdivision 64 } } ] }
+Pose { translation -0.015500000000000014 -0.02684678751731759 0.003
+      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.017 0.018 roughness 0.45 metalness 0  }
+        geometry Box { size 0.0026 0.0004 0.0002 } } ]
+        }
+ ] name "supporto_b"
+      boundingObject Cylinder { radius 0.038 height 0.006 }
+    }
+Pose { translation 0.41200000000000003 -0.03 0.7522
+      children [ Shape { appearance PBRAppearance {
+        baseColorMap ImageTexture { url ["../textures/supporto_b.png"] }
+        roughness 1 metalness 0 } geometry Plane { size 0.070 0.018 } } ] }DEF POSTAZIONE_1 Solid { translation 0.32 0.09 0.753
+      children [ Shape { appearance PBRAppearance { baseColor 0.58 0.59 0.60 roughness 0.32 metalness 1  }
+        geometry Cylinder { radius 0.038 height 0.006 subdivision 64 } }
+        Pose { translation 0 0 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.075 0.078 0.080 roughness 0.84 metalness 0  }
+      geometry Cylinder { radius 0.023 height 0.0007 subdivision 64 } } ] }
+Pose { translation 0.031 0.0 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.12 0.13 0.14 roughness 0.3 metalness 1  }
+      geometry Cylinder { radius 0.0025 height 0.0008 subdivision 64 } } ] }
+Pose { translation 0.031 0.0 0.003
+      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.017 0.018 roughness 0.45 metalness 0  }
+        geometry Box { size 0.0026 0.0004 0.0002 } } ]
+        }
+Pose { translation -0.015499999999999995 0.0268467875173176 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.12 0.13 0.14 roughness 0.3 metalness 1  }
+      geometry Cylinder { radius 0.0025 height 0.0008 subdivision 64 } } ] }
+Pose { translation -0.015499999999999995 0.0268467875173176 0.003
+      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.017 0.018 roughness 0.45 metalness 0  }
+        geometry Box { size 0.0026 0.0004 0.0002 } } ]
+        }
+Pose { translation -0.015500000000000014 -0.02684678751731759 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.12 0.13 0.14 roughness 0.3 metalness 1  }
+      geometry Cylinder { radius 0.0025 height 0.0008 subdivision 64 } } ] }
+Pose { translation -0.015500000000000014 -0.02684678751731759 0.003
+      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.017 0.018 roughness 0.45 metalness 0  }
+        geometry Box { size 0.0026 0.0004 0.0002 } } ]
+        }
+ ] name "postazione_1"
+      boundingObject Cylinder { radius 0.038 height 0.006 }
+    }
+Pose { translation 0.41200000000000003 0.09 0.7522
+      children [ Shape { appearance PBRAppearance {
+        baseColorMap ImageTexture { url ["../textures/postazione_1.png"] }
+        roughness 1 metalness 0 } geometry Plane { size 0.070 0.018 } } ] }DEF POSTAZIONE_2 Solid { translation 0.32 0.21 0.753
+      children [ Shape { appearance PBRAppearance { baseColor 0.58 0.59 0.60 roughness 0.32 metalness 1  }
+        geometry Cylinder { radius 0.038 height 0.006 subdivision 64 } }
+        Pose { translation 0 0 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.075 0.078 0.080 roughness 0.84 metalness 0  }
+      geometry Cylinder { radius 0.023 height 0.0007 subdivision 64 } } ] }
+Pose { translation 0.031 0.0 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.12 0.13 0.14 roughness 0.3 metalness 1  }
+      geometry Cylinder { radius 0.0025 height 0.0008 subdivision 64 } } ] }
+Pose { translation 0.031 0.0 0.003
+      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.017 0.018 roughness 0.45 metalness 0  }
+        geometry Box { size 0.0026 0.0004 0.0002 } } ]
+        }
+Pose { translation -0.015499999999999995 0.0268467875173176 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.12 0.13 0.14 roughness 0.3 metalness 1  }
+      geometry Cylinder { radius 0.0025 height 0.0008 subdivision 64 } } ] }
+Pose { translation -0.015499999999999995 0.0268467875173176 0.003
+      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.017 0.018 roughness 0.45 metalness 0  }
+        geometry Box { size 0.0026 0.0004 0.0002 } } ]
+        }
+Pose { translation -0.015500000000000014 -0.02684678751731759 0.00255 children [ Shape {
+      appearance PBRAppearance { baseColor 0.12 0.13 0.14 roughness 0.3 metalness 1  }
+      geometry Cylinder { radius 0.0025 height 0.0008 subdivision 64 } } ] }
+Pose { translation -0.015500000000000014 -0.02684678751731759 0.003
+      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.017 0.018 roughness 0.45 metalness 0  }
+        geometry Box { size 0.0026 0.0004 0.0002 } } ]
+        }
+ ] name "postazione_2"
+      boundingObject Cylinder { radius 0.038 height 0.006 }
+    }
+Pose { translation 0.41200000000000003 0.21 0.7522
+      children [ Shape { appearance PBRAppearance {
+        baseColorMap ImageTexture { url ["../textures/postazione_2.png"] }
+        roughness 1 metalness 0 } geometry Plane { size 0.070 0.018 } } ] }DEF CAMPIONE_A Solid { translation 0.32 -0.15 0.796
+      children [
+        Shape { appearance PBRAppearance { baseColor 0.88 0.89 0.87 roughness 0.24 metalness 0  } geometry IndexedFaceSet { creaseAngle 0.65 coord Coordinate { point [ 0.0160000 0.0000000 -0.0400000, 0.0159230 0.0015683 -0.0400000, 0.0156926 0.0031214 -0.0400000, 0.0153110 0.0046446 -0.0400000, 0.0147821 0.0061229 -0.0400000, 0.0141107 0.0075423 -0.0400000, 0.0133035 0.0088891 -0.0400000, 0.0123682 0.0101503 -0.0400000, 0.0113137 0.0113137 -0.0400000, 0.0101503 0.0123682 -0.0400000, 0.0088891 0.0133035 -0.0400000, 0.0075423 0.0141107 -0.0400000, 0.0061229 0.0147821 -0.0400000, 0.0046446 0.0153110 -0.0400000, 0.0031214 0.0156926 -0.0400000, 0.0015683 0.0159230 -0.0400000, 0.0000000 0.0160000 -0.0400000, -0.0015683 0.0159230 -0.0400000, -0.0031214 0.0156926 -0.0400000, -0.0046446 0.0153110 -0.0400000, -0.0061229 0.0147821 -0.0400000, -0.0075423 0.0141107 -0.0400000, -0.0088891 0.0133035 -0.0400000, -0.0101503 0.0123682 -0.0400000, -0.0113137 0.0113137 -0.0400000, -0.0123682 0.0101503 -0.0400000, -0.0133035 0.0088891 -0.0400000, -0.0141107 0.0075423 -0.0400000, -0.0147821 0.0061229 -0.0400000, -0.0153110 0.0046446 -0.0400000, -0.0156926 0.0031214 -0.0400000, -0.0159230 0.0015683 -0.0400000, -0.0160000 0.0000000 -0.0400000, -0.0159230 -0.0015683 -0.0400000, -0.0156926 -0.0031214 -0.0400000, -0.0153110 -0.0046446 -0.0400000, -0.0147821 -0.0061229 -0.0400000, -0.0141107 -0.0075423 -0.0400000, -0.0133035 -0.0088891 -0.0400000, -0.0123682 -0.0101503 -0.0400000, -0.0113137 -0.0113137 -0.0400000, -0.0101503 -0.0123682 -0.0400000, -0.0088891 -0.0133035 -0.0400000, -0.0075423 -0.0141107 -0.0400000, -0.0061229 -0.0147821 -0.0400000, -0.0046446 -0.0153110 -0.0400000, -0.0031214 -0.0156926 -0.0400000, -0.0015683 -0.0159230 -0.0400000, -0.0000000 -0.0160000 -0.0400000, 0.0015683 -0.0159230 -0.0400000, 0.0031214 -0.0156926 -0.0400000, 0.0046446 -0.0153110 -0.0400000, 0.0061229 -0.0147821 -0.0400000, 0.0075423 -0.0141107 -0.0400000, 0.0088891 -0.0133035 -0.0400000, 0.0101503 -0.0123682 -0.0400000, 0.0113137 -0.0113137 -0.0400000, 0.0123682 -0.0101503 -0.0400000, 0.0133035 -0.0088891 -0.0400000, 0.0141107 -0.0075423 -0.0400000, 0.0147821 -0.0061229 -0.0400000, 0.0153110 -0.0046446 -0.0400000, 0.0156926 -0.0031214 -0.0400000, 0.0159230 -0.0015683 -0.0400000, 0.0180000 0.0000000 -0.0390000, 0.0179133 0.0017643 -0.0390000, 0.0176541 0.0035116 -0.0390000, 0.0172249 0.0052251 -0.0390000, 0.0166298 0.0068883 -0.0390000, 0.0158746 0.0084851 -0.0390000, 0.0149665 0.0100003 -0.0390000, 0.0139142 0.0114191 -0.0390000, 0.0127279 0.0127279 -0.0390000, 0.0114191 0.0139142 -0.0390000, 0.0100003 0.0149665 -0.0390000, 0.0084851 0.0158746 -0.0390000, 0.0068883 0.0166298 -0.0390000, 0.0052251 0.0172249 -0.0390000, 0.0035116 0.0176541 -0.0390000, 0.0017643 0.0179133 -0.0390000, 0.0000000 0.0180000 -0.0390000, -0.0017643 0.0179133 -0.0390000, -0.0035116 0.0176541 -0.0390000, -0.0052251 0.0172249 -0.0390000, -0.0068883 0.0166298 -0.0390000, -0.0084851 0.0158746 -0.0390000, -0.0100003 0.0149665 -0.0390000, -0.0114191 0.0139142 -0.0390000, -0.0127279 0.0127279 -0.0390000, -0.0139142 0.0114191 -0.0390000, -0.0149665 0.0100003 -0.0390000, -0.0158746 0.0084851 -0.0390000, -0.0166298 0.0068883 -0.0390000, -0.0172249 0.0052251 -0.0390000, -0.0176541 0.0035116 -0.0390000, -0.0179133 0.0017643 -0.0390000, -0.0180000 0.0000000 -0.0390000, -0.0179133 -0.0017643 -0.0390000, -0.0176541 -0.0035116 -0.0390000, -0.0172249 -0.0052251 -0.0390000, -0.0166298 -0.0068883 -0.0390000, -0.0158746 -0.0084851 -0.0390000, -0.0149665 -0.0100003 -0.0390000, -0.0139142 -0.0114191 -0.0390000, -0.0127279 -0.0127279 -0.0390000, -0.0114191 -0.0139142 -0.0390000, -0.0100003 -0.0149665 -0.0390000, -0.0084851 -0.0158746 -0.0390000, -0.0068883 -0.0166298 -0.0390000, -0.0052251 -0.0172249 -0.0390000, -0.0035116 -0.0176541 -0.0390000, -0.0017643 -0.0179133 -0.0390000, -0.0000000 -0.0180000 -0.0390000, 0.0017643 -0.0179133 -0.0390000, 0.0035116 -0.0176541 -0.0390000, 0.0052251 -0.0172249 -0.0390000, 0.0068883 -0.0166298 -0.0390000, 0.0084851 -0.0158746 -0.0390000, 0.0100003 -0.0149665 -0.0390000, 0.0114191 -0.0139142 -0.0390000, 0.0127279 -0.0127279 -0.0390000, 0.0139142 -0.0114191 -0.0390000, 0.0149665 -0.0100003 -0.0390000, 0.0158746 -0.0084851 -0.0390000, 0.0166298 -0.0068883 -0.0390000, 0.0172249 -0.0052251 -0.0390000, 0.0176541 -0.0035116 -0.0390000, 0.0179133 -0.0017643 -0.0390000, 0.0190000 0.0000000 -0.0350000, 0.0189085 0.0018623 -0.0350000, 0.0186349 0.0037067 -0.0350000, 0.0181819 0.0055154 -0.0350000, 0.0175537 0.0072710 -0.0350000, 0.0167565 0.0089565 -0.0350000, 0.0157979 0.0105558 -0.0350000, 0.0146872 0.0120535 -0.0350000, 0.0134350 0.0134350 -0.0350000, 0.0120535 0.0146872 -0.0350000, 0.0105558 0.0157979 -0.0350000, 0.0089565 0.0167565 -0.0350000, 0.0072710 0.0175537 -0.0350000, 0.0055154 0.0181819 -0.0350000, 0.0037067 0.0186349 -0.0350000, 0.0018623 0.0189085 -0.0350000, 0.0000000 0.0190000 -0.0350000, -0.0018623 0.0189085 -0.0350000, -0.0037067 0.0186349 -0.0350000, -0.0055154 0.0181819 -0.0350000, -0.0072710 0.0175537 -0.0350000, -0.0089565 0.0167565 -0.0350000, -0.0105558 0.0157979 -0.0350000, -0.0120535 0.0146872 -0.0350000, -0.0134350 0.0134350 -0.0350000, -0.0146872 0.0120535 -0.0350000, -0.0157979 0.0105558 -0.0350000, -0.0167565 0.0089565 -0.0350000, -0.0175537 0.0072710 -0.0350000, -0.0181819 0.0055154 -0.0350000, -0.0186349 0.0037067 -0.0350000, -0.0189085 0.0018623 -0.0350000, -0.0190000 0.0000000 -0.0350000, -0.0189085 -0.0018623 -0.0350000, -0.0186349 -0.0037067 -0.0350000, -0.0181819 -0.0055154 -0.0350000, -0.0175537 -0.0072710 -0.0350000, -0.0167565 -0.0089565 -0.0350000, -0.0157979 -0.0105558 -0.0350000, -0.0146872 -0.0120535 -0.0350000, -0.0134350 -0.0134350 -0.0350000, -0.0120535 -0.0146872 -0.0350000, -0.0105558 -0.0157979 -0.0350000, -0.0089565 -0.0167565 -0.0350000, -0.0072710 -0.0175537 -0.0350000, -0.0055154 -0.0181819 -0.0350000, -0.0037067 -0.0186349 -0.0350000, -0.0018623 -0.0189085 -0.0350000, -0.0000000 -0.0190000 -0.0350000, 0.0018623 -0.0189085 -0.0350000, 0.0037067 -0.0186349 -0.0350000, 0.0055154 -0.0181819 -0.0350000, 0.0072710 -0.0175537 -0.0350000, 0.0089565 -0.0167565 -0.0350000, 0.0105558 -0.0157979 -0.0350000, 0.0120535 -0.0146872 -0.0350000, 0.0134350 -0.0134350 -0.0350000, 0.0146872 -0.0120535 -0.0350000, 0.0157979 -0.0105558 -0.0350000, 0.0167565 -0.0089565 -0.0350000, 0.0175537 -0.0072710 -0.0350000, 0.0181819 -0.0055154 -0.0350000, 0.0186349 -0.0037067 -0.0350000, 0.0189085 -0.0018623 -0.0350000, 0.0190000 0.0000000 0.0270000, 0.0189085 0.0018623 0.0270000, 0.0186349 0.0037067 0.0270000, 0.0181819 0.0055154 0.0270000, 0.0175537 0.0072710 0.0270000, 0.0167565 0.0089565 0.0270000, 0.0157979 0.0105558 0.0270000, 0.0146872 0.0120535 0.0270000, 0.0134350 0.0134350 0.0270000, 0.0120535 0.0146872 0.0270000, 0.0105558 0.0157979 0.0270000, 0.0089565 0.0167565 0.0270000, 0.0072710 0.0175537 0.0270000, 0.0055154 0.0181819 0.0270000, 0.0037067 0.0186349 0.0270000, 0.0018623 0.0189085 0.0270000, 0.0000000 0.0190000 0.0270000, -0.0018623 0.0189085 0.0270000, -0.0037067 0.0186349 0.0270000, -0.0055154 0.0181819 0.0270000, -0.0072710 0.0175537 0.0270000, -0.0089565 0.0167565 0.0270000, -0.0105558 0.0157979 0.0270000, -0.0120535 0.0146872 0.0270000, -0.0134350 0.0134350 0.0270000, -0.0146872 0.0120535 0.0270000, -0.0157979 0.0105558 0.0270000, -0.0167565 0.0089565 0.0270000, -0.0175537 0.0072710 0.0270000, -0.0181819 0.0055154 0.0270000, -0.0186349 0.0037067 0.0270000, -0.0189085 0.0018623 0.0270000, -0.0190000 0.0000000 0.0270000, -0.0189085 -0.0018623 0.0270000, -0.0186349 -0.0037067 0.0270000, -0.0181819 -0.0055154 0.0270000, -0.0175537 -0.0072710 0.0270000, -0.0167565 -0.0089565 0.0270000, -0.0157979 -0.0105558 0.0270000, -0.0146872 -0.0120535 0.0270000, -0.0134350 -0.0134350 0.0270000, -0.0120535 -0.0146872 0.0270000, -0.0105558 -0.0157979 0.0270000, -0.0089565 -0.0167565 0.0270000, -0.0072710 -0.0175537 0.0270000, -0.0055154 -0.0181819 0.0270000, -0.0037067 -0.0186349 0.0270000, -0.0018623 -0.0189085 0.0270000, -0.0000000 -0.0190000 0.0270000, 0.0018623 -0.0189085 0.0270000, 0.0037067 -0.0186349 0.0270000, 0.0055154 -0.0181819 0.0270000, 0.0072710 -0.0175537 0.0270000, 0.0089565 -0.0167565 0.0270000, 0.0105558 -0.0157979 0.0270000, 0.0120535 -0.0146872 0.0270000, 0.0134350 -0.0134350 0.0270000, 0.0146872 -0.0120535 0.0270000, 0.0157979 -0.0105558 0.0270000, 0.0167565 -0.0089565 0.0270000, 0.0175537 -0.0072710 0.0270000, 0.0181819 -0.0055154 0.0270000, 0.0186349 -0.0037067 0.0270000, 0.0189085 -0.0018623 0.0270000, 0.0185000 0.0000000 0.0300000, 0.0184109 0.0018133 0.0300000, 0.0181445 0.0036092 0.0300000, 0.0177034 0.0053703 0.0300000, 0.0170918 0.0070796 0.0300000, 0.0163155 0.0087208 0.0300000, 0.0153822 0.0102780 0.0300000, 0.0143007 0.0117363 0.0300000, 0.0130815 0.0130815 0.0300000, 0.0117363 0.0143007 0.0300000, 0.0102780 0.0153822 0.0300000, 0.0087208 0.0163155 0.0300000, 0.0070796 0.0170918 0.0300000, 0.0053703 0.0177034 0.0300000, 0.0036092 0.0181445 0.0300000, 0.0018133 0.0184109 0.0300000, 0.0000000 0.0185000 0.0300000, -0.0018133 0.0184109 0.0300000, -0.0036092 0.0181445 0.0300000, -0.0053703 0.0177034 0.0300000, -0.0070796 0.0170918 0.0300000, -0.0087208 0.0163155 0.0300000, -0.0102780 0.0153822 0.0300000, -0.0117363 0.0143007 0.0300000, -0.0130815 0.0130815 0.0300000, -0.0143007 0.0117363 0.0300000, -0.0153822 0.0102780 0.0300000, -0.0163155 0.0087208 0.0300000, -0.0170918 0.0070796 0.0300000, -0.0177034 0.0053703 0.0300000, -0.0181445 0.0036092 0.0300000, -0.0184109 0.0018133 0.0300000, -0.0185000 0.0000000 0.0300000, -0.0184109 -0.0018133 0.0300000, -0.0181445 -0.0036092 0.0300000, -0.0177034 -0.0053703 0.0300000, -0.0170918 -0.0070796 0.0300000, -0.0163155 -0.0087208 0.0300000, -0.0153822 -0.0102780 0.0300000, -0.0143007 -0.0117363 0.0300000, -0.0130815 -0.0130815 0.0300000, -0.0117363 -0.0143007 0.0300000, -0.0102780 -0.0153822 0.0300000, -0.0087208 -0.0163155 0.0300000, -0.0070796 -0.0170918 0.0300000, -0.0053703 -0.0177034 0.0300000, -0.0036092 -0.0181445 0.0300000, -0.0018133 -0.0184109 0.0300000, -0.0000000 -0.0185000 0.0300000, 0.0018133 -0.0184109 0.0300000, 0.0036092 -0.0181445 0.0300000, 0.0053703 -0.0177034 0.0300000, 0.0070796 -0.0170918 0.0300000, 0.0087208 -0.0163155 0.0300000, 0.0102780 -0.0153822 0.0300000, 0.0117363 -0.0143007 0.0300000, 0.0130815 -0.0130815 0.0300000, 0.0143007 -0.0117363 0.0300000, 0.0153822 -0.0102780 0.0300000, 0.0163155 -0.0087208 0.0300000, 0.0170918 -0.0070796 0.0300000, 0.0177034 -0.0053703 0.0300000, 0.0181445 -0.0036092 0.0300000, 0.0184109 -0.0018133 0.0300000, 0.0130000 0.0000000 0.0340000, 0.0129374 0.0012742 0.0340000, 0.0127502 0.0025362 0.0340000, 0.0124402 0.0037737 0.0340000, 0.0120104 0.0049749 0.0340000, 0.0114650 0.0061282 0.0340000, 0.0108091 0.0072224 0.0340000, 0.0100491 0.0082471 0.0340000, 0.0091924 0.0091924 0.0340000, 0.0082471 0.0100491 0.0340000, 0.0072224 0.0108091 0.0340000, 0.0061282 0.0114650 0.0340000, 0.0049749 0.0120104 0.0340000, 0.0037737 0.0124402 0.0340000, 0.0025362 0.0127502 0.0340000, 0.0012742 0.0129374 0.0340000, 0.0000000 0.0130000 0.0340000, -0.0012742 0.0129374 0.0340000, -0.0025362 0.0127502 0.0340000, -0.0037737 0.0124402 0.0340000, -0.0049749 0.0120104 0.0340000, -0.0061282 0.0114650 0.0340000, -0.0072224 0.0108091 0.0340000, -0.0082471 0.0100491 0.0340000, -0.0091924 0.0091924 0.0340000, -0.0100491 0.0082471 0.0340000, -0.0108091 0.0072224 0.0340000, -0.0114650 0.0061282 0.0340000, -0.0120104 0.0049749 0.0340000, -0.0124402 0.0037737 0.0340000, -0.0127502 0.0025362 0.0340000, -0.0129374 0.0012742 0.0340000, -0.0130000 0.0000000 0.0340000, -0.0129374 -0.0012742 0.0340000, -0.0127502 -0.0025362 0.0340000, -0.0124402 -0.0037737 0.0340000, -0.0120104 -0.0049749 0.0340000, -0.0114650 -0.0061282 0.0340000, -0.0108091 -0.0072224 0.0340000, -0.0100491 -0.0082471 0.0340000, -0.0091924 -0.0091924 0.0340000, -0.0082471 -0.0100491 0.0340000, -0.0072224 -0.0108091 0.0340000, -0.0061282 -0.0114650 0.0340000, -0.0049749 -0.0120104 0.0340000, -0.0037737 -0.0124402 0.0340000, -0.0025362 -0.0127502 0.0340000, -0.0012742 -0.0129374 0.0340000, -0.0000000 -0.0130000 0.0340000, 0.0012742 -0.0129374 0.0340000, 0.0025362 -0.0127502 0.0340000, 0.0037737 -0.0124402 0.0340000, 0.0049749 -0.0120104 0.0340000, 0.0061282 -0.0114650 0.0340000, 0.0072224 -0.0108091 0.0340000, 0.0082471 -0.0100491 0.0340000, 0.0091924 -0.0091924 0.0340000, 0.0100491 -0.0082471 0.0340000, 0.0108091 -0.0072224 0.0340000, 0.0114650 -0.0061282 0.0340000, 0.0120104 -0.0049749 0.0340000, 0.0124402 -0.0037737 0.0340000, 0.0127502 -0.0025362 0.0340000, 0.0129374 -0.0012742 0.0340000, 0.0130000 0.0000000 0.0400000, 0.0129374 0.0012742 0.0400000, 0.0127502 0.0025362 0.0400000, 0.0124402 0.0037737 0.0400000, 0.0120104 0.0049749 0.0400000, 0.0114650 0.0061282 0.0400000, 0.0108091 0.0072224 0.0400000, 0.0100491 0.0082471 0.0400000, 0.0091924 0.0091924 0.0400000, 0.0082471 0.0100491 0.0400000, 0.0072224 0.0108091 0.0400000, 0.0061282 0.0114650 0.0400000, 0.0049749 0.0120104 0.0400000, 0.0037737 0.0124402 0.0400000, 0.0025362 0.0127502 0.0400000, 0.0012742 0.0129374 0.0400000, 0.0000000 0.0130000 0.0400000, -0.0012742 0.0129374 0.0400000, -0.0025362 0.0127502 0.0400000, -0.0037737 0.0124402 0.0400000, -0.0049749 0.0120104 0.0400000, -0.0061282 0.0114650 0.0400000, -0.0072224 0.0108091 0.0400000, -0.0082471 0.0100491 0.0400000, -0.0091924 0.0091924 0.0400000, -0.0100491 0.0082471 0.0400000, -0.0108091 0.0072224 0.0400000, -0.0114650 0.0061282 0.0400000, -0.0120104 0.0049749 0.0400000, -0.0124402 0.0037737 0.0400000, -0.0127502 0.0025362 0.0400000, -0.0129374 0.0012742 0.0400000, -0.0130000 0.0000000 0.0400000, -0.0129374 -0.0012742 0.0400000, -0.0127502 -0.0025362 0.0400000, -0.0124402 -0.0037737 0.0400000, -0.0120104 -0.0049749 0.0400000, -0.0114650 -0.0061282 0.0400000, -0.0108091 -0.0072224 0.0400000, -0.0100491 -0.0082471 0.0400000, -0.0091924 -0.0091924 0.0400000, -0.0082471 -0.0100491 0.0400000, -0.0072224 -0.0108091 0.0400000, -0.0061282 -0.0114650 0.0400000, -0.0049749 -0.0120104 0.0400000, -0.0037737 -0.0124402 0.0400000, -0.0025362 -0.0127502 0.0400000, -0.0012742 -0.0129374 0.0400000, -0.0000000 -0.0130000 0.0400000, 0.0012742 -0.0129374 0.0400000, 0.0025362 -0.0127502 0.0400000, 0.0037737 -0.0124402 0.0400000, 0.0049749 -0.0120104 0.0400000, 0.0061282 -0.0114650 0.0400000, 0.0072224 -0.0108091 0.0400000, 0.0082471 -0.0100491 0.0400000, 0.0091924 -0.0091924 0.0400000, 0.0100491 -0.0082471 0.0400000, 0.0108091 -0.0072224 0.0400000, 0.0114650 -0.0061282 0.0400000, 0.0120104 -0.0049749 0.0400000, 0.0124402 -0.0037737 0.0400000, 0.0127502 -0.0025362 0.0400000, 0.0129374 -0.0012742 0.0400000 ] } coordIndex [ 0 1 65 64 -1, 1 2 66 65 -1, 2 3 67 66 -1, 3 4 68 67 -1, 4 5 69 68 -1, 5 6 70 69 -1, 6 7 71 70 -1, 7 8 72 71 -1, 8 9 73 72 -1, 9 10 74 73 -1, 10 11 75 74 -1, 11 12 76 75 -1, 12 13 77 76 -1, 13 14 78 77 -1, 14 15 79 78 -1, 15 16 80 79 -1, 16 17 81 80 -1, 17 18 82 81 -1, 18 19 83 82 -1, 19 20 84 83 -1, 20 21 85 84 -1, 21 22 86 85 -1, 22 23 87 86 -1, 23 24 88 87 -1, 24 25 89 88 -1, 25 26 90 89 -1, 26 27 91 90 -1, 27 28 92 91 -1, 28 29 93 92 -1, 29 30 94 93 -1, 30 31 95 94 -1, 31 32 96 95 -1, 32 33 97 96 -1, 33 34 98 97 -1, 34 35 99 98 -1, 35 36 100 99 -1, 36 37 101 100 -1, 37 38 102 101 -1, 38 39 103 102 -1, 39 40 104 103 -1, 40 41 105 104 -1, 41 42 106 105 -1, 42 43 107 106 -1, 43 44 108 107 -1, 44 45 109 108 -1, 45 46 110 109 -1, 46 47 111 110 -1, 47 48 112 111 -1, 48 49 113 112 -1, 49 50 114 113 -1, 50 51 115 114 -1, 51 52 116 115 -1, 52 53 117 116 -1, 53 54 118 117 -1, 54 55 119 118 -1, 55 56 120 119 -1, 56 57 121 120 -1, 57 58 122 121 -1, 58 59 123 122 -1, 59 60 124 123 -1, 60 61 125 124 -1, 61 62 126 125 -1, 62 63 127 126 -1, 63 0 64 127 -1, 64 65 129 128 -1, 65 66 130 129 -1, 66 67 131 130 -1, 67 68 132 131 -1, 68 69 133 132 -1, 69 70 134 133 -1, 70 71 135 134 -1, 71 72 136 135 -1, 72 73 137 136 -1, 73 74 138 137 -1, 74 75 139 138 -1, 75 76 140 139 -1, 76 77 141 140 -1, 77 78 142 141 -1, 78 79 143 142 -1, 79 80 144 143 -1, 80 81 145 144 -1, 81 82 146 145 -1, 82 83 147 146 -1, 83 84 148 147 -1, 84 85 149 148 -1, 85 86 150 149 -1, 86 87 151 150 -1, 87 88 152 151 -1, 88 89 153 152 -1, 89 90 154 153 -1, 90 91 155 154 -1, 91 92 156 155 -1, 92 93 157 156 -1, 93 94 158 157 -1, 94 95 159 158 -1, 95 96 160 159 -1, 96 97 161 160 -1, 97 98 162 161 -1, 98 99 163 162 -1, 99 100 164 163 -1, 100 101 165 164 -1, 101 102 166 165 -1, 102 103 167 166 -1, 103 104 168 167 -1, 104 105 169 168 -1, 105 106 170 169 -1, 106 107 171 170 -1, 107 108 172 171 -1, 108 109 173 172 -1, 109 110 174 173 -1, 110 111 175 174 -1, 111 112 176 175 -1, 112 113 177 176 -1, 113 114 178 177 -1, 114 115 179 178 -1, 115 116 180 179 -1, 116 117 181 180 -1, 117 118 182 181 -1, 118 119 183 182 -1, 119 120 184 183 -1, 120 121 185 184 -1, 121 122 186 185 -1, 122 123 187 186 -1, 123 124 188 187 -1, 124 125 189 188 -1, 125 126 190 189 -1, 126 127 191 190 -1, 127 64 128 191 -1, 128 129 193 192 -1, 129 130 194 193 -1, 130 131 195 194 -1, 131 132 196 195 -1, 132 133 197 196 -1, 133 134 198 197 -1, 134 135 199 198 -1, 135 136 200 199 -1, 136 137 201 200 -1, 137 138 202 201 -1, 138 139 203 202 -1, 139 140 204 203 -1, 140 141 205 204 -1, 141 142 206 205 -1, 142 143 207 206 -1, 143 144 208 207 -1, 144 145 209 208 -1, 145 146 210 209 -1, 146 147 211 210 -1, 147 148 212 211 -1, 148 149 213 212 -1, 149 150 214 213 -1, 150 151 215 214 -1, 151 152 216 215 -1, 152 153 217 216 -1, 153 154 218 217 -1, 154 155 219 218 -1, 155 156 220 219 -1, 156 157 221 220 -1, 157 158 222 221 -1, 158 159 223 222 -1, 159 160 224 223 -1, 160 161 225 224 -1, 161 162 226 225 -1, 162 163 227 226 -1, 163 164 228 227 -1, 164 165 229 228 -1, 165 166 230 229 -1, 166 167 231 230 -1, 167 168 232 231 -1, 168 169 233 232 -1, 169 170 234 233 -1, 170 171 235 234 -1, 171 172 236 235 -1, 172 173 237 236 -1, 173 174 238 237 -1, 174 175 239 238 -1, 175 176 240 239 -1, 176 177 241 240 -1, 177 178 242 241 -1, 178 179 243 242 -1, 179 180 244 243 -1, 180 181 245 244 -1, 181 182 246 245 -1, 182 183 247 246 -1, 183 184 248 247 -1, 184 185 249 248 -1, 185 186 250 249 -1, 186 187 251 250 -1, 187 188 252 251 -1, 188 189 253 252 -1, 189 190 254 253 -1, 190 191 255 254 -1, 191 128 192 255 -1, 192 193 257 256 -1, 193 194 258 257 -1, 194 195 259 258 -1, 195 196 260 259 -1, 196 197 261 260 -1, 197 198 262 261 -1, 198 199 263 262 -1, 199 200 264 263 -1, 200 201 265 264 -1, 201 202 266 265 -1, 202 203 267 266 -1, 203 204 268 267 -1, 204 205 269 268 -1, 205 206 270 269 -1, 206 207 271 270 -1, 207 208 272 271 -1, 208 209 273 272 -1, 209 210 274 273 -1, 210 211 275 274 -1, 211 212 276 275 -1, 212 213 277 276 -1, 213 214 278 277 -1, 214 215 279 278 -1, 215 216 280 279 -1, 216 217 281 280 -1, 217 218 282 281 -1, 218 219 283 282 -1, 219 220 284 283 -1, 220 221 285 284 -1, 221 222 286 285 -1, 222 223 287 286 -1, 223 224 288 287 -1, 224 225 289 288 -1, 225 226 290 289 -1, 226 227 291 290 -1, 227 228 292 291 -1, 228 229 293 292 -1, 229 230 294 293 -1, 230 231 295 294 -1, 231 232 296 295 -1, 232 233 297 296 -1, 233 234 298 297 -1, 234 235 299 298 -1, 235 236 300 299 -1, 236 237 301 300 -1, 237 238 302 301 -1, 238 239 303 302 -1, 239 240 304 303 -1, 240 241 305 304 -1, 241 242 306 305 -1, 242 243 307 306 -1, 243 244 308 307 -1, 244 245 309 308 -1, 245 246 310 309 -1, 246 247 311 310 -1, 247 248 312 311 -1, 248 249 313 312 -1, 249 250 314 313 -1, 250 251 315 314 -1, 251 252 316 315 -1, 252 253 317 316 -1, 253 254 318 317 -1, 254 255 319 318 -1, 255 192 256 319 -1, 256 257 321 320 -1, 257 258 322 321 -1, 258 259 323 322 -1, 259 260 324 323 -1, 260 261 325 324 -1, 261 262 326 325 -1, 262 263 327 326 -1, 263 264 328 327 -1, 264 265 329 328 -1, 265 266 330 329 -1, 266 267 331 330 -1, 267 268 332 331 -1, 268 269 333 332 -1, 269 270 334 333 -1, 270 271 335 334 -1, 271 272 336 335 -1, 272 273 337 336 -1, 273 274 338 337 -1, 274 275 339 338 -1, 275 276 340 339 -1, 276 277 341 340 -1, 277 278 342 341 -1, 278 279 343 342 -1, 279 280 344 343 -1, 280 281 345 344 -1, 281 282 346 345 -1, 282 283 347 346 -1, 283 284 348 347 -1, 284 285 349 348 -1, 285 286 350 349 -1, 286 287 351 350 -1, 287 288 352 351 -1, 288 289 353 352 -1, 289 290 354 353 -1, 290 291 355 354 -1, 291 292 356 355 -1, 292 293 357 356 -1, 293 294 358 357 -1, 294 295 359 358 -1, 295 296 360 359 -1, 296 297 361 360 -1, 297 298 362 361 -1, 298 299 363 362 -1, 299 300 364 363 -1, 300 301 365 364 -1, 301 302 366 365 -1, 302 303 367 366 -1, 303 304 368 367 -1, 304 305 369 368 -1, 305 306 370 369 -1, 306 307 371 370 -1, 307 308 372 371 -1, 308 309 373 372 -1, 309 310 374 373 -1, 310 311 375 374 -1, 311 312 376 375 -1, 312 313 377 376 -1, 313 314 378 377 -1, 314 315 379 378 -1, 315 316 380 379 -1, 316 317 381 380 -1, 317 318 382 381 -1, 318 319 383 382 -1, 319 256 320 383 -1, 320 321 385 384 -1, 321 322 386 385 -1, 322 323 387 386 -1, 323 324 388 387 -1, 324 325 389 388 -1, 325 326 390 389 -1, 326 327 391 390 -1, 327 328 392 391 -1, 328 329 393 392 -1, 329 330 394 393 -1, 330 331 395 394 -1, 331 332 396 395 -1, 332 333 397 396 -1, 333 334 398 397 -1, 334 335 399 398 -1, 335 336 400 399 -1, 336 337 401 400 -1, 337 338 402 401 -1, 338 339 403 402 -1, 339 340 404 403 -1, 340 341 405 404 -1, 341 342 406 405 -1, 342 343 407 406 -1, 343 344 408 407 -1, 344 345 409 408 -1, 345 346 410 409 -1, 346 347 411 410 -1, 347 348 412 411 -1, 348 349 413 412 -1, 349 350 414 413 -1, 350 351 415 414 -1, 351 352 416 415 -1, 352 353 417 416 -1, 353 354 418 417 -1, 354 355 419 418 -1, 355 356 420 419 -1, 356 357 421 420 -1, 357 358 422 421 -1, 358 359 423 422 -1, 359 360 424 423 -1, 360 361 425 424 -1, 361 362 426 425 -1, 362 363 427 426 -1, 363 364 428 427 -1, 364 365 429 428 -1, 365 366 430 429 -1, 366 367 431 430 -1, 367 368 432 431 -1, 368 369 433 432 -1, 369 370 434 433 -1, 370 371 435 434 -1, 371 372 436 435 -1, 372 373 437 436 -1, 373 374 438 437 -1, 374 375 439 438 -1, 375 376 440 439 -1, 376 377 441 440 -1, 377 378 442 441 -1, 378 379 443 442 -1, 379 380 444 443 -1, 380 381 445 444 -1, 381 382 446 445 -1, 382 383 447 446 -1, 383 320 384 447 -1, 63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 -1, 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447 -1 ] } }
+        Pose { translation 0 0 -0.003 rotation 0 0 1 -0.85 children [ Shape {
+          appearance PBRAppearance { baseColorMap ImageTexture { url ["../textures/campione_a_label.png"] }
+            roughness 0.73 metalness 0 }
+          geometry Cylinder { radius 0.0191 height 0.026 subdivision 64 } } ] }
+        Pose { translation 0 0 0.038 children [ Shape {
+      appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.43 metalness 0  }
+      geometry Cylinder { radius 0.0168 height 0.013 subdivision 64 } } ] }
+Pose { translation 0 0 0.031 children [ Shape {
+      appearance PBRAppearance { baseColor 0.045 0.049 0.050 roughness 0.55 metalness 0  }
+      geometry Cylinder { radius 0.0169 height 0.0018 subdivision 64 } } ] }
+Pose { translation 0.0168000 0.0000000 0.038 rotation 0 0 1 0.0000000
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0166563 0.0021928 0.038 rotation 0 0 1 0.1308997
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0162276 0.0043482 0.038 rotation 0 0 1 0.2617994
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0155212 0.0064291 0.038 rotation 0 0 1 0.3926991
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0145492 0.0084000 0.038 rotation 0 0 1 0.5235988
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0133283 0.0102272 0.038 rotation 0 0 1 0.6544985
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0118794 0.0118794 0.038 rotation 0 0 1 0.7853982
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0102272 0.0133283 0.038 rotation 0 0 1 0.9162979
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0084000 0.0145492 0.038 rotation 0 0 1 1.0471976
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0064291 0.0155212 0.038 rotation 0 0 1 1.1780972
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0043482 0.0162276 0.038 rotation 0 0 1 1.3089969
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0021928 0.0166563 0.038 rotation 0 0 1 1.4398966
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0000000 0.0168000 0.038 rotation 0 0 1 1.5707963
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0021928 0.0166563 0.038 rotation 0 0 1 1.7016960
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0043482 0.0162276 0.038 rotation 0 0 1 1.8325957
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0064291 0.0155212 0.038 rotation 0 0 1 1.9634954
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0084000 0.0145492 0.038 rotation 0 0 1 2.0943951
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0102272 0.0133283 0.038 rotation 0 0 1 2.2252948
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0118794 0.0118794 0.038 rotation 0 0 1 2.3561945
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0133283 0.0102272 0.038 rotation 0 0 1 2.4870942
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0145492 0.0084000 0.038 rotation 0 0 1 2.6179939
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0155212 0.0064291 0.038 rotation 0 0 1 2.7488936
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0162276 0.0043482 0.038 rotation 0 0 1 2.8797933
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0166563 0.0021928 0.038 rotation 0 0 1 3.0106930
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0168000 0.0000000 0.038 rotation 0 0 1 3.1415927
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0166563 -0.0021928 0.038 rotation 0 0 1 3.2724923
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0162276 -0.0043482 0.038 rotation 0 0 1 3.4033920
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0155212 -0.0064291 0.038 rotation 0 0 1 3.5342917
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0145492 -0.0084000 0.038 rotation 0 0 1 3.6651914
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0133283 -0.0102272 0.038 rotation 0 0 1 3.7960911
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0118794 -0.0118794 0.038 rotation 0 0 1 3.9269908
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0102272 -0.0133283 0.038 rotation 0 0 1 4.0578905
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0084000 -0.0145492 0.038 rotation 0 0 1 4.1887902
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0064291 -0.0155212 0.038 rotation 0 0 1 4.3196899
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0043482 -0.0162276 0.038 rotation 0 0 1 4.4505896
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0021928 -0.0166563 0.038 rotation 0 0 1 4.5814893
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0000000 -0.0168000 0.038 rotation 0 0 1 4.7123890
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0021928 -0.0166563 0.038 rotation 0 0 1 4.8432887
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0043482 -0.0162276 0.038 rotation 0 0 1 4.9741884
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0064291 -0.0155212 0.038 rotation 0 0 1 5.1050881
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0084000 -0.0145492 0.038 rotation 0 0 1 5.2359878
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0102272 -0.0133283 0.038 rotation 0 0 1 5.3668874
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0118794 -0.0118794 0.038 rotation 0 0 1 5.4977871
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0133283 -0.0102272 0.038 rotation 0 0 1 5.6286868
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0145492 -0.0084000 0.038 rotation 0 0 1 5.7595865
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0155212 -0.0064291 0.038 rotation 0 0 1 5.8904862
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0162276 -0.0043482 0.038 rotation 0 0 1 6.0213859
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0166563 -0.0021928 0.038 rotation 0 0 1 6.1522856
+          children [ Shape { appearance PBRAppearance { baseColor 0.10 0.16 0.22 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+
+      ] name "campione_a"
+      # Presa vincolata dal supervisore; nessun modello di attrito del flacone.
+    }
+DEF CAMPIONE_B Solid { translation 0.32 -0.03 0.796
+      children [
+        Shape { appearance PBRAppearance { baseColor 0.88 0.89 0.87 roughness 0.24 metalness 0  } geometry IndexedFaceSet { creaseAngle 0.65 coord Coordinate { point [ 0.0160000 0.0000000 -0.0400000, 0.0159230 0.0015683 -0.0400000, 0.0156926 0.0031214 -0.0400000, 0.0153110 0.0046446 -0.0400000, 0.0147821 0.0061229 -0.0400000, 0.0141107 0.0075423 -0.0400000, 0.0133035 0.0088891 -0.0400000, 0.0123682 0.0101503 -0.0400000, 0.0113137 0.0113137 -0.0400000, 0.0101503 0.0123682 -0.0400000, 0.0088891 0.0133035 -0.0400000, 0.0075423 0.0141107 -0.0400000, 0.0061229 0.0147821 -0.0400000, 0.0046446 0.0153110 -0.0400000, 0.0031214 0.0156926 -0.0400000, 0.0015683 0.0159230 -0.0400000, 0.0000000 0.0160000 -0.0400000, -0.0015683 0.0159230 -0.0400000, -0.0031214 0.0156926 -0.0400000, -0.0046446 0.0153110 -0.0400000, -0.0061229 0.0147821 -0.0400000, -0.0075423 0.0141107 -0.0400000, -0.0088891 0.0133035 -0.0400000, -0.0101503 0.0123682 -0.0400000, -0.0113137 0.0113137 -0.0400000, -0.0123682 0.0101503 -0.0400000, -0.0133035 0.0088891 -0.0400000, -0.0141107 0.0075423 -0.0400000, -0.0147821 0.0061229 -0.0400000, -0.0153110 0.0046446 -0.0400000, -0.0156926 0.0031214 -0.0400000, -0.0159230 0.0015683 -0.0400000, -0.0160000 0.0000000 -0.0400000, -0.0159230 -0.0015683 -0.0400000, -0.0156926 -0.0031214 -0.0400000, -0.0153110 -0.0046446 -0.0400000, -0.0147821 -0.0061229 -0.0400000, -0.0141107 -0.0075423 -0.0400000, -0.0133035 -0.0088891 -0.0400000, -0.0123682 -0.0101503 -0.0400000, -0.0113137 -0.0113137 -0.0400000, -0.0101503 -0.0123682 -0.0400000, -0.0088891 -0.0133035 -0.0400000, -0.0075423 -0.0141107 -0.0400000, -0.0061229 -0.0147821 -0.0400000, -0.0046446 -0.0153110 -0.0400000, -0.0031214 -0.0156926 -0.0400000, -0.0015683 -0.0159230 -0.0400000, -0.0000000 -0.0160000 -0.0400000, 0.0015683 -0.0159230 -0.0400000, 0.0031214 -0.0156926 -0.0400000, 0.0046446 -0.0153110 -0.0400000, 0.0061229 -0.0147821 -0.0400000, 0.0075423 -0.0141107 -0.0400000, 0.0088891 -0.0133035 -0.0400000, 0.0101503 -0.0123682 -0.0400000, 0.0113137 -0.0113137 -0.0400000, 0.0123682 -0.0101503 -0.0400000, 0.0133035 -0.0088891 -0.0400000, 0.0141107 -0.0075423 -0.0400000, 0.0147821 -0.0061229 -0.0400000, 0.0153110 -0.0046446 -0.0400000, 0.0156926 -0.0031214 -0.0400000, 0.0159230 -0.0015683 -0.0400000, 0.0180000 0.0000000 -0.0390000, 0.0179133 0.0017643 -0.0390000, 0.0176541 0.0035116 -0.0390000, 0.0172249 0.0052251 -0.0390000, 0.0166298 0.0068883 -0.0390000, 0.0158746 0.0084851 -0.0390000, 0.0149665 0.0100003 -0.0390000, 0.0139142 0.0114191 -0.0390000, 0.0127279 0.0127279 -0.0390000, 0.0114191 0.0139142 -0.0390000, 0.0100003 0.0149665 -0.0390000, 0.0084851 0.0158746 -0.0390000, 0.0068883 0.0166298 -0.0390000, 0.0052251 0.0172249 -0.0390000, 0.0035116 0.0176541 -0.0390000, 0.0017643 0.0179133 -0.0390000, 0.0000000 0.0180000 -0.0390000, -0.0017643 0.0179133 -0.0390000, -0.0035116 0.0176541 -0.0390000, -0.0052251 0.0172249 -0.0390000, -0.0068883 0.0166298 -0.0390000, -0.0084851 0.0158746 -0.0390000, -0.0100003 0.0149665 -0.0390000, -0.0114191 0.0139142 -0.0390000, -0.0127279 0.0127279 -0.0390000, -0.0139142 0.0114191 -0.0390000, -0.0149665 0.0100003 -0.0390000, -0.0158746 0.0084851 -0.0390000, -0.0166298 0.0068883 -0.0390000, -0.0172249 0.0052251 -0.0390000, -0.0176541 0.0035116 -0.0390000, -0.0179133 0.0017643 -0.0390000, -0.0180000 0.0000000 -0.0390000, -0.0179133 -0.0017643 -0.0390000, -0.0176541 -0.0035116 -0.0390000, -0.0172249 -0.0052251 -0.0390000, -0.0166298 -0.0068883 -0.0390000, -0.0158746 -0.0084851 -0.0390000, -0.0149665 -0.0100003 -0.0390000, -0.0139142 -0.0114191 -0.0390000, -0.0127279 -0.0127279 -0.0390000, -0.0114191 -0.0139142 -0.0390000, -0.0100003 -0.0149665 -0.0390000, -0.0084851 -0.0158746 -0.0390000, -0.0068883 -0.0166298 -0.0390000, -0.0052251 -0.0172249 -0.0390000, -0.0035116 -0.0176541 -0.0390000, -0.0017643 -0.0179133 -0.0390000, -0.0000000 -0.0180000 -0.0390000, 0.0017643 -0.0179133 -0.0390000, 0.0035116 -0.0176541 -0.0390000, 0.0052251 -0.0172249 -0.0390000, 0.0068883 -0.0166298 -0.0390000, 0.0084851 -0.0158746 -0.0390000, 0.0100003 -0.0149665 -0.0390000, 0.0114191 -0.0139142 -0.0390000, 0.0127279 -0.0127279 -0.0390000, 0.0139142 -0.0114191 -0.0390000, 0.0149665 -0.0100003 -0.0390000, 0.0158746 -0.0084851 -0.0390000, 0.0166298 -0.0068883 -0.0390000, 0.0172249 -0.0052251 -0.0390000, 0.0176541 -0.0035116 -0.0390000, 0.0179133 -0.0017643 -0.0390000, 0.0190000 0.0000000 -0.0350000, 0.0189085 0.0018623 -0.0350000, 0.0186349 0.0037067 -0.0350000, 0.0181819 0.0055154 -0.0350000, 0.0175537 0.0072710 -0.0350000, 0.0167565 0.0089565 -0.0350000, 0.0157979 0.0105558 -0.0350000, 0.0146872 0.0120535 -0.0350000, 0.0134350 0.0134350 -0.0350000, 0.0120535 0.0146872 -0.0350000, 0.0105558 0.0157979 -0.0350000, 0.0089565 0.0167565 -0.0350000, 0.0072710 0.0175537 -0.0350000, 0.0055154 0.0181819 -0.0350000, 0.0037067 0.0186349 -0.0350000, 0.0018623 0.0189085 -0.0350000, 0.0000000 0.0190000 -0.0350000, -0.0018623 0.0189085 -0.0350000, -0.0037067 0.0186349 -0.0350000, -0.0055154 0.0181819 -0.0350000, -0.0072710 0.0175537 -0.0350000, -0.0089565 0.0167565 -0.0350000, -0.0105558 0.0157979 -0.0350000, -0.0120535 0.0146872 -0.0350000, -0.0134350 0.0134350 -0.0350000, -0.0146872 0.0120535 -0.0350000, -0.0157979 0.0105558 -0.0350000, -0.0167565 0.0089565 -0.0350000, -0.0175537 0.0072710 -0.0350000, -0.0181819 0.0055154 -0.0350000, -0.0186349 0.0037067 -0.0350000, -0.0189085 0.0018623 -0.0350000, -0.0190000 0.0000000 -0.0350000, -0.0189085 -0.0018623 -0.0350000, -0.0186349 -0.0037067 -0.0350000, -0.0181819 -0.0055154 -0.0350000, -0.0175537 -0.0072710 -0.0350000, -0.0167565 -0.0089565 -0.0350000, -0.0157979 -0.0105558 -0.0350000, -0.0146872 -0.0120535 -0.0350000, -0.0134350 -0.0134350 -0.0350000, -0.0120535 -0.0146872 -0.0350000, -0.0105558 -0.0157979 -0.0350000, -0.0089565 -0.0167565 -0.0350000, -0.0072710 -0.0175537 -0.0350000, -0.0055154 -0.0181819 -0.0350000, -0.0037067 -0.0186349 -0.0350000, -0.0018623 -0.0189085 -0.0350000, -0.0000000 -0.0190000 -0.0350000, 0.0018623 -0.0189085 -0.0350000, 0.0037067 -0.0186349 -0.0350000, 0.0055154 -0.0181819 -0.0350000, 0.0072710 -0.0175537 -0.0350000, 0.0089565 -0.0167565 -0.0350000, 0.0105558 -0.0157979 -0.0350000, 0.0120535 -0.0146872 -0.0350000, 0.0134350 -0.0134350 -0.0350000, 0.0146872 -0.0120535 -0.0350000, 0.0157979 -0.0105558 -0.0350000, 0.0167565 -0.0089565 -0.0350000, 0.0175537 -0.0072710 -0.0350000, 0.0181819 -0.0055154 -0.0350000, 0.0186349 -0.0037067 -0.0350000, 0.0189085 -0.0018623 -0.0350000, 0.0190000 0.0000000 0.0270000, 0.0189085 0.0018623 0.0270000, 0.0186349 0.0037067 0.0270000, 0.0181819 0.0055154 0.0270000, 0.0175537 0.0072710 0.0270000, 0.0167565 0.0089565 0.0270000, 0.0157979 0.0105558 0.0270000, 0.0146872 0.0120535 0.0270000, 0.0134350 0.0134350 0.0270000, 0.0120535 0.0146872 0.0270000, 0.0105558 0.0157979 0.0270000, 0.0089565 0.0167565 0.0270000, 0.0072710 0.0175537 0.0270000, 0.0055154 0.0181819 0.0270000, 0.0037067 0.0186349 0.0270000, 0.0018623 0.0189085 0.0270000, 0.0000000 0.0190000 0.0270000, -0.0018623 0.0189085 0.0270000, -0.0037067 0.0186349 0.0270000, -0.0055154 0.0181819 0.0270000, -0.0072710 0.0175537 0.0270000, -0.0089565 0.0167565 0.0270000, -0.0105558 0.0157979 0.0270000, -0.0120535 0.0146872 0.0270000, -0.0134350 0.0134350 0.0270000, -0.0146872 0.0120535 0.0270000, -0.0157979 0.0105558 0.0270000, -0.0167565 0.0089565 0.0270000, -0.0175537 0.0072710 0.0270000, -0.0181819 0.0055154 0.0270000, -0.0186349 0.0037067 0.0270000, -0.0189085 0.0018623 0.0270000, -0.0190000 0.0000000 0.0270000, -0.0189085 -0.0018623 0.0270000, -0.0186349 -0.0037067 0.0270000, -0.0181819 -0.0055154 0.0270000, -0.0175537 -0.0072710 0.0270000, -0.0167565 -0.0089565 0.0270000, -0.0157979 -0.0105558 0.0270000, -0.0146872 -0.0120535 0.0270000, -0.0134350 -0.0134350 0.0270000, -0.0120535 -0.0146872 0.0270000, -0.0105558 -0.0157979 0.0270000, -0.0089565 -0.0167565 0.0270000, -0.0072710 -0.0175537 0.0270000, -0.0055154 -0.0181819 0.0270000, -0.0037067 -0.0186349 0.0270000, -0.0018623 -0.0189085 0.0270000, -0.0000000 -0.0190000 0.0270000, 0.0018623 -0.0189085 0.0270000, 0.0037067 -0.0186349 0.0270000, 0.0055154 -0.0181819 0.0270000, 0.0072710 -0.0175537 0.0270000, 0.0089565 -0.0167565 0.0270000, 0.0105558 -0.0157979 0.0270000, 0.0120535 -0.0146872 0.0270000, 0.0134350 -0.0134350 0.0270000, 0.0146872 -0.0120535 0.0270000, 0.0157979 -0.0105558 0.0270000, 0.0167565 -0.0089565 0.0270000, 0.0175537 -0.0072710 0.0270000, 0.0181819 -0.0055154 0.0270000, 0.0186349 -0.0037067 0.0270000, 0.0189085 -0.0018623 0.0270000, 0.0185000 0.0000000 0.0300000, 0.0184109 0.0018133 0.0300000, 0.0181445 0.0036092 0.0300000, 0.0177034 0.0053703 0.0300000, 0.0170918 0.0070796 0.0300000, 0.0163155 0.0087208 0.0300000, 0.0153822 0.0102780 0.0300000, 0.0143007 0.0117363 0.0300000, 0.0130815 0.0130815 0.0300000, 0.0117363 0.0143007 0.0300000, 0.0102780 0.0153822 0.0300000, 0.0087208 0.0163155 0.0300000, 0.0070796 0.0170918 0.0300000, 0.0053703 0.0177034 0.0300000, 0.0036092 0.0181445 0.0300000, 0.0018133 0.0184109 0.0300000, 0.0000000 0.0185000 0.0300000, -0.0018133 0.0184109 0.0300000, -0.0036092 0.0181445 0.0300000, -0.0053703 0.0177034 0.0300000, -0.0070796 0.0170918 0.0300000, -0.0087208 0.0163155 0.0300000, -0.0102780 0.0153822 0.0300000, -0.0117363 0.0143007 0.0300000, -0.0130815 0.0130815 0.0300000, -0.0143007 0.0117363 0.0300000, -0.0153822 0.0102780 0.0300000, -0.0163155 0.0087208 0.0300000, -0.0170918 0.0070796 0.0300000, -0.0177034 0.0053703 0.0300000, -0.0181445 0.0036092 0.0300000, -0.0184109 0.0018133 0.0300000, -0.0185000 0.0000000 0.0300000, -0.0184109 -0.0018133 0.0300000, -0.0181445 -0.0036092 0.0300000, -0.0177034 -0.0053703 0.0300000, -0.0170918 -0.0070796 0.0300000, -0.0163155 -0.0087208 0.0300000, -0.0153822 -0.0102780 0.0300000, -0.0143007 -0.0117363 0.0300000, -0.0130815 -0.0130815 0.0300000, -0.0117363 -0.0143007 0.0300000, -0.0102780 -0.0153822 0.0300000, -0.0087208 -0.0163155 0.0300000, -0.0070796 -0.0170918 0.0300000, -0.0053703 -0.0177034 0.0300000, -0.0036092 -0.0181445 0.0300000, -0.0018133 -0.0184109 0.0300000, -0.0000000 -0.0185000 0.0300000, 0.0018133 -0.0184109 0.0300000, 0.0036092 -0.0181445 0.0300000, 0.0053703 -0.0177034 0.0300000, 0.0070796 -0.0170918 0.0300000, 0.0087208 -0.0163155 0.0300000, 0.0102780 -0.0153822 0.0300000, 0.0117363 -0.0143007 0.0300000, 0.0130815 -0.0130815 0.0300000, 0.0143007 -0.0117363 0.0300000, 0.0153822 -0.0102780 0.0300000, 0.0163155 -0.0087208 0.0300000, 0.0170918 -0.0070796 0.0300000, 0.0177034 -0.0053703 0.0300000, 0.0181445 -0.0036092 0.0300000, 0.0184109 -0.0018133 0.0300000, 0.0130000 0.0000000 0.0340000, 0.0129374 0.0012742 0.0340000, 0.0127502 0.0025362 0.0340000, 0.0124402 0.0037737 0.0340000, 0.0120104 0.0049749 0.0340000, 0.0114650 0.0061282 0.0340000, 0.0108091 0.0072224 0.0340000, 0.0100491 0.0082471 0.0340000, 0.0091924 0.0091924 0.0340000, 0.0082471 0.0100491 0.0340000, 0.0072224 0.0108091 0.0340000, 0.0061282 0.0114650 0.0340000, 0.0049749 0.0120104 0.0340000, 0.0037737 0.0124402 0.0340000, 0.0025362 0.0127502 0.0340000, 0.0012742 0.0129374 0.0340000, 0.0000000 0.0130000 0.0340000, -0.0012742 0.0129374 0.0340000, -0.0025362 0.0127502 0.0340000, -0.0037737 0.0124402 0.0340000, -0.0049749 0.0120104 0.0340000, -0.0061282 0.0114650 0.0340000, -0.0072224 0.0108091 0.0340000, -0.0082471 0.0100491 0.0340000, -0.0091924 0.0091924 0.0340000, -0.0100491 0.0082471 0.0340000, -0.0108091 0.0072224 0.0340000, -0.0114650 0.0061282 0.0340000, -0.0120104 0.0049749 0.0340000, -0.0124402 0.0037737 0.0340000, -0.0127502 0.0025362 0.0340000, -0.0129374 0.0012742 0.0340000, -0.0130000 0.0000000 0.0340000, -0.0129374 -0.0012742 0.0340000, -0.0127502 -0.0025362 0.0340000, -0.0124402 -0.0037737 0.0340000, -0.0120104 -0.0049749 0.0340000, -0.0114650 -0.0061282 0.0340000, -0.0108091 -0.0072224 0.0340000, -0.0100491 -0.0082471 0.0340000, -0.0091924 -0.0091924 0.0340000, -0.0082471 -0.0100491 0.0340000, -0.0072224 -0.0108091 0.0340000, -0.0061282 -0.0114650 0.0340000, -0.0049749 -0.0120104 0.0340000, -0.0037737 -0.0124402 0.0340000, -0.0025362 -0.0127502 0.0340000, -0.0012742 -0.0129374 0.0340000, -0.0000000 -0.0130000 0.0340000, 0.0012742 -0.0129374 0.0340000, 0.0025362 -0.0127502 0.0340000, 0.0037737 -0.0124402 0.0340000, 0.0049749 -0.0120104 0.0340000, 0.0061282 -0.0114650 0.0340000, 0.0072224 -0.0108091 0.0340000, 0.0082471 -0.0100491 0.0340000, 0.0091924 -0.0091924 0.0340000, 0.0100491 -0.0082471 0.0340000, 0.0108091 -0.0072224 0.0340000, 0.0114650 -0.0061282 0.0340000, 0.0120104 -0.0049749 0.0340000, 0.0124402 -0.0037737 0.0340000, 0.0127502 -0.0025362 0.0340000, 0.0129374 -0.0012742 0.0340000, 0.0130000 0.0000000 0.0400000, 0.0129374 0.0012742 0.0400000, 0.0127502 0.0025362 0.0400000, 0.0124402 0.0037737 0.0400000, 0.0120104 0.0049749 0.0400000, 0.0114650 0.0061282 0.0400000, 0.0108091 0.0072224 0.0400000, 0.0100491 0.0082471 0.0400000, 0.0091924 0.0091924 0.0400000, 0.0082471 0.0100491 0.0400000, 0.0072224 0.0108091 0.0400000, 0.0061282 0.0114650 0.0400000, 0.0049749 0.0120104 0.0400000, 0.0037737 0.0124402 0.0400000, 0.0025362 0.0127502 0.0400000, 0.0012742 0.0129374 0.0400000, 0.0000000 0.0130000 0.0400000, -0.0012742 0.0129374 0.0400000, -0.0025362 0.0127502 0.0400000, -0.0037737 0.0124402 0.0400000, -0.0049749 0.0120104 0.0400000, -0.0061282 0.0114650 0.0400000, -0.0072224 0.0108091 0.0400000, -0.0082471 0.0100491 0.0400000, -0.0091924 0.0091924 0.0400000, -0.0100491 0.0082471 0.0400000, -0.0108091 0.0072224 0.0400000, -0.0114650 0.0061282 0.0400000, -0.0120104 0.0049749 0.0400000, -0.0124402 0.0037737 0.0400000, -0.0127502 0.0025362 0.0400000, -0.0129374 0.0012742 0.0400000, -0.0130000 0.0000000 0.0400000, -0.0129374 -0.0012742 0.0400000, -0.0127502 -0.0025362 0.0400000, -0.0124402 -0.0037737 0.0400000, -0.0120104 -0.0049749 0.0400000, -0.0114650 -0.0061282 0.0400000, -0.0108091 -0.0072224 0.0400000, -0.0100491 -0.0082471 0.0400000, -0.0091924 -0.0091924 0.0400000, -0.0082471 -0.0100491 0.0400000, -0.0072224 -0.0108091 0.0400000, -0.0061282 -0.0114650 0.0400000, -0.0049749 -0.0120104 0.0400000, -0.0037737 -0.0124402 0.0400000, -0.0025362 -0.0127502 0.0400000, -0.0012742 -0.0129374 0.0400000, -0.0000000 -0.0130000 0.0400000, 0.0012742 -0.0129374 0.0400000, 0.0025362 -0.0127502 0.0400000, 0.0037737 -0.0124402 0.0400000, 0.0049749 -0.0120104 0.0400000, 0.0061282 -0.0114650 0.0400000, 0.0072224 -0.0108091 0.0400000, 0.0082471 -0.0100491 0.0400000, 0.0091924 -0.0091924 0.0400000, 0.0100491 -0.0082471 0.0400000, 0.0108091 -0.0072224 0.0400000, 0.0114650 -0.0061282 0.0400000, 0.0120104 -0.0049749 0.0400000, 0.0124402 -0.0037737 0.0400000, 0.0127502 -0.0025362 0.0400000, 0.0129374 -0.0012742 0.0400000 ] } coordIndex [ 0 1 65 64 -1, 1 2 66 65 -1, 2 3 67 66 -1, 3 4 68 67 -1, 4 5 69 68 -1, 5 6 70 69 -1, 6 7 71 70 -1, 7 8 72 71 -1, 8 9 73 72 -1, 9 10 74 73 -1, 10 11 75 74 -1, 11 12 76 75 -1, 12 13 77 76 -1, 13 14 78 77 -1, 14 15 79 78 -1, 15 16 80 79 -1, 16 17 81 80 -1, 17 18 82 81 -1, 18 19 83 82 -1, 19 20 84 83 -1, 20 21 85 84 -1, 21 22 86 85 -1, 22 23 87 86 -1, 23 24 88 87 -1, 24 25 89 88 -1, 25 26 90 89 -1, 26 27 91 90 -1, 27 28 92 91 -1, 28 29 93 92 -1, 29 30 94 93 -1, 30 31 95 94 -1, 31 32 96 95 -1, 32 33 97 96 -1, 33 34 98 97 -1, 34 35 99 98 -1, 35 36 100 99 -1, 36 37 101 100 -1, 37 38 102 101 -1, 38 39 103 102 -1, 39 40 104 103 -1, 40 41 105 104 -1, 41 42 106 105 -1, 42 43 107 106 -1, 43 44 108 107 -1, 44 45 109 108 -1, 45 46 110 109 -1, 46 47 111 110 -1, 47 48 112 111 -1, 48 49 113 112 -1, 49 50 114 113 -1, 50 51 115 114 -1, 51 52 116 115 -1, 52 53 117 116 -1, 53 54 118 117 -1, 54 55 119 118 -1, 55 56 120 119 -1, 56 57 121 120 -1, 57 58 122 121 -1, 58 59 123 122 -1, 59 60 124 123 -1, 60 61 125 124 -1, 61 62 126 125 -1, 62 63 127 126 -1, 63 0 64 127 -1, 64 65 129 128 -1, 65 66 130 129 -1, 66 67 131 130 -1, 67 68 132 131 -1, 68 69 133 132 -1, 69 70 134 133 -1, 70 71 135 134 -1, 71 72 136 135 -1, 72 73 137 136 -1, 73 74 138 137 -1, 74 75 139 138 -1, 75 76 140 139 -1, 76 77 141 140 -1, 77 78 142 141 -1, 78 79 143 142 -1, 79 80 144 143 -1, 80 81 145 144 -1, 81 82 146 145 -1, 82 83 147 146 -1, 83 84 148 147 -1, 84 85 149 148 -1, 85 86 150 149 -1, 86 87 151 150 -1, 87 88 152 151 -1, 88 89 153 152 -1, 89 90 154 153 -1, 90 91 155 154 -1, 91 92 156 155 -1, 92 93 157 156 -1, 93 94 158 157 -1, 94 95 159 158 -1, 95 96 160 159 -1, 96 97 161 160 -1, 97 98 162 161 -1, 98 99 163 162 -1, 99 100 164 163 -1, 100 101 165 164 -1, 101 102 166 165 -1, 102 103 167 166 -1, 103 104 168 167 -1, 104 105 169 168 -1, 105 106 170 169 -1, 106 107 171 170 -1, 107 108 172 171 -1, 108 109 173 172 -1, 109 110 174 173 -1, 110 111 175 174 -1, 111 112 176 175 -1, 112 113 177 176 -1, 113 114 178 177 -1, 114 115 179 178 -1, 115 116 180 179 -1, 116 117 181 180 -1, 117 118 182 181 -1, 118 119 183 182 -1, 119 120 184 183 -1, 120 121 185 184 -1, 121 122 186 185 -1, 122 123 187 186 -1, 123 124 188 187 -1, 124 125 189 188 -1, 125 126 190 189 -1, 126 127 191 190 -1, 127 64 128 191 -1, 128 129 193 192 -1, 129 130 194 193 -1, 130 131 195 194 -1, 131 132 196 195 -1, 132 133 197 196 -1, 133 134 198 197 -1, 134 135 199 198 -1, 135 136 200 199 -1, 136 137 201 200 -1, 137 138 202 201 -1, 138 139 203 202 -1, 139 140 204 203 -1, 140 141 205 204 -1, 141 142 206 205 -1, 142 143 207 206 -1, 143 144 208 207 -1, 144 145 209 208 -1, 145 146 210 209 -1, 146 147 211 210 -1, 147 148 212 211 -1, 148 149 213 212 -1, 149 150 214 213 -1, 150 151 215 214 -1, 151 152 216 215 -1, 152 153 217 216 -1, 153 154 218 217 -1, 154 155 219 218 -1, 155 156 220 219 -1, 156 157 221 220 -1, 157 158 222 221 -1, 158 159 223 222 -1, 159 160 224 223 -1, 160 161 225 224 -1, 161 162 226 225 -1, 162 163 227 226 -1, 163 164 228 227 -1, 164 165 229 228 -1, 165 166 230 229 -1, 166 167 231 230 -1, 167 168 232 231 -1, 168 169 233 232 -1, 169 170 234 233 -1, 170 171 235 234 -1, 171 172 236 235 -1, 172 173 237 236 -1, 173 174 238 237 -1, 174 175 239 238 -1, 175 176 240 239 -1, 176 177 241 240 -1, 177 178 242 241 -1, 178 179 243 242 -1, 179 180 244 243 -1, 180 181 245 244 -1, 181 182 246 245 -1, 182 183 247 246 -1, 183 184 248 247 -1, 184 185 249 248 -1, 185 186 250 249 -1, 186 187 251 250 -1, 187 188 252 251 -1, 188 189 253 252 -1, 189 190 254 253 -1, 190 191 255 254 -1, 191 128 192 255 -1, 192 193 257 256 -1, 193 194 258 257 -1, 194 195 259 258 -1, 195 196 260 259 -1, 196 197 261 260 -1, 197 198 262 261 -1, 198 199 263 262 -1, 199 200 264 263 -1, 200 201 265 264 -1, 201 202 266 265 -1, 202 203 267 266 -1, 203 204 268 267 -1, 204 205 269 268 -1, 205 206 270 269 -1, 206 207 271 270 -1, 207 208 272 271 -1, 208 209 273 272 -1, 209 210 274 273 -1, 210 211 275 274 -1, 211 212 276 275 -1, 212 213 277 276 -1, 213 214 278 277 -1, 214 215 279 278 -1, 215 216 280 279 -1, 216 217 281 280 -1, 217 218 282 281 -1, 218 219 283 282 -1, 219 220 284 283 -1, 220 221 285 284 -1, 221 222 286 285 -1, 222 223 287 286 -1, 223 224 288 287 -1, 224 225 289 288 -1, 225 226 290 289 -1, 226 227 291 290 -1, 227 228 292 291 -1, 228 229 293 292 -1, 229 230 294 293 -1, 230 231 295 294 -1, 231 232 296 295 -1, 232 233 297 296 -1, 233 234 298 297 -1, 234 235 299 298 -1, 235 236 300 299 -1, 236 237 301 300 -1, 237 238 302 301 -1, 238 239 303 302 -1, 239 240 304 303 -1, 240 241 305 304 -1, 241 242 306 305 -1, 242 243 307 306 -1, 243 244 308 307 -1, 244 245 309 308 -1, 245 246 310 309 -1, 246 247 311 310 -1, 247 248 312 311 -1, 248 249 313 312 -1, 249 250 314 313 -1, 250 251 315 314 -1, 251 252 316 315 -1, 252 253 317 316 -1, 253 254 318 317 -1, 254 255 319 318 -1, 255 192 256 319 -1, 256 257 321 320 -1, 257 258 322 321 -1, 258 259 323 322 -1, 259 260 324 323 -1, 260 261 325 324 -1, 261 262 326 325 -1, 262 263 327 326 -1, 263 264 328 327 -1, 264 265 329 328 -1, 265 266 330 329 -1, 266 267 331 330 -1, 267 268 332 331 -1, 268 269 333 332 -1, 269 270 334 333 -1, 270 271 335 334 -1, 271 272 336 335 -1, 272 273 337 336 -1, 273 274 338 337 -1, 274 275 339 338 -1, 275 276 340 339 -1, 276 277 341 340 -1, 277 278 342 341 -1, 278 279 343 342 -1, 279 280 344 343 -1, 280 281 345 344 -1, 281 282 346 345 -1, 282 283 347 346 -1, 283 284 348 347 -1, 284 285 349 348 -1, 285 286 350 349 -1, 286 287 351 350 -1, 287 288 352 351 -1, 288 289 353 352 -1, 289 290 354 353 -1, 290 291 355 354 -1, 291 292 356 355 -1, 292 293 357 356 -1, 293 294 358 357 -1, 294 295 359 358 -1, 295 296 360 359 -1, 296 297 361 360 -1, 297 298 362 361 -1, 298 299 363 362 -1, 299 300 364 363 -1, 300 301 365 364 -1, 301 302 366 365 -1, 302 303 367 366 -1, 303 304 368 367 -1, 304 305 369 368 -1, 305 306 370 369 -1, 306 307 371 370 -1, 307 308 372 371 -1, 308 309 373 372 -1, 309 310 374 373 -1, 310 311 375 374 -1, 311 312 376 375 -1, 312 313 377 376 -1, 313 314 378 377 -1, 314 315 379 378 -1, 315 316 380 379 -1, 316 317 381 380 -1, 317 318 382 381 -1, 318 319 383 382 -1, 319 256 320 383 -1, 320 321 385 384 -1, 321 322 386 385 -1, 322 323 387 386 -1, 323 324 388 387 -1, 324 325 389 388 -1, 325 326 390 389 -1, 326 327 391 390 -1, 327 328 392 391 -1, 328 329 393 392 -1, 329 330 394 393 -1, 330 331 395 394 -1, 331 332 396 395 -1, 332 333 397 396 -1, 333 334 398 397 -1, 334 335 399 398 -1, 335 336 400 399 -1, 336 337 401 400 -1, 337 338 402 401 -1, 338 339 403 402 -1, 339 340 404 403 -1, 340 341 405 404 -1, 341 342 406 405 -1, 342 343 407 406 -1, 343 344 408 407 -1, 344 345 409 408 -1, 345 346 410 409 -1, 346 347 411 410 -1, 347 348 412 411 -1, 348 349 413 412 -1, 349 350 414 413 -1, 350 351 415 414 -1, 351 352 416 415 -1, 352 353 417 416 -1, 353 354 418 417 -1, 354 355 419 418 -1, 355 356 420 419 -1, 356 357 421 420 -1, 357 358 422 421 -1, 358 359 423 422 -1, 359 360 424 423 -1, 360 361 425 424 -1, 361 362 426 425 -1, 362 363 427 426 -1, 363 364 428 427 -1, 364 365 429 428 -1, 365 366 430 429 -1, 366 367 431 430 -1, 367 368 432 431 -1, 368 369 433 432 -1, 369 370 434 433 -1, 370 371 435 434 -1, 371 372 436 435 -1, 372 373 437 436 -1, 373 374 438 437 -1, 374 375 439 438 -1, 375 376 440 439 -1, 376 377 441 440 -1, 377 378 442 441 -1, 378 379 443 442 -1, 379 380 444 443 -1, 380 381 445 444 -1, 381 382 446 445 -1, 382 383 447 446 -1, 383 320 384 447 -1, 63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 -1, 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447 -1 ] } }
+        Pose { translation 0 0 -0.003 rotation 0 0 1 -0.85 children [ Shape {
+          appearance PBRAppearance { baseColorMap ImageTexture { url ["../textures/campione_b_label.png"] }
+            roughness 0.73 metalness 0 }
+          geometry Cylinder { radius 0.0191 height 0.026 subdivision 64 } } ] }
+        Pose { translation 0 0 0.038 children [ Shape {
+      appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.43 metalness 0  }
+      geometry Cylinder { radius 0.0168 height 0.013 subdivision 64 } } ] }
+Pose { translation 0 0 0.031 children [ Shape {
+      appearance PBRAppearance { baseColor 0.045 0.049 0.050 roughness 0.55 metalness 0  }
+      geometry Cylinder { radius 0.0169 height 0.0018 subdivision 64 } } ] }
+Pose { translation 0.0168000 0.0000000 0.038 rotation 0 0 1 0.0000000
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0166563 0.0021928 0.038 rotation 0 0 1 0.1308997
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0162276 0.0043482 0.038 rotation 0 0 1 0.2617994
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0155212 0.0064291 0.038 rotation 0 0 1 0.3926991
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0145492 0.0084000 0.038 rotation 0 0 1 0.5235988
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0133283 0.0102272 0.038 rotation 0 0 1 0.6544985
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0118794 0.0118794 0.038 rotation 0 0 1 0.7853982
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0102272 0.0133283 0.038 rotation 0 0 1 0.9162979
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0084000 0.0145492 0.038 rotation 0 0 1 1.0471976
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0064291 0.0155212 0.038 rotation 0 0 1 1.1780972
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0043482 0.0162276 0.038 rotation 0 0 1 1.3089969
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0021928 0.0166563 0.038 rotation 0 0 1 1.4398966
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0000000 0.0168000 0.038 rotation 0 0 1 1.5707963
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0021928 0.0166563 0.038 rotation 0 0 1 1.7016960
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0043482 0.0162276 0.038 rotation 0 0 1 1.8325957
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0064291 0.0155212 0.038 rotation 0 0 1 1.9634954
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0084000 0.0145492 0.038 rotation 0 0 1 2.0943951
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0102272 0.0133283 0.038 rotation 0 0 1 2.2252948
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0118794 0.0118794 0.038 rotation 0 0 1 2.3561945
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0133283 0.0102272 0.038 rotation 0 0 1 2.4870942
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0145492 0.0084000 0.038 rotation 0 0 1 2.6179939
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0155212 0.0064291 0.038 rotation 0 0 1 2.7488936
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0162276 0.0043482 0.038 rotation 0 0 1 2.8797933
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0166563 0.0021928 0.038 rotation 0 0 1 3.0106930
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0168000 0.0000000 0.038 rotation 0 0 1 3.1415927
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0166563 -0.0021928 0.038 rotation 0 0 1 3.2724923
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0162276 -0.0043482 0.038 rotation 0 0 1 3.4033920
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0155212 -0.0064291 0.038 rotation 0 0 1 3.5342917
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0145492 -0.0084000 0.038 rotation 0 0 1 3.6651914
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0133283 -0.0102272 0.038 rotation 0 0 1 3.7960911
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0118794 -0.0118794 0.038 rotation 0 0 1 3.9269908
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0102272 -0.0133283 0.038 rotation 0 0 1 4.0578905
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0084000 -0.0145492 0.038 rotation 0 0 1 4.1887902
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0064291 -0.0155212 0.038 rotation 0 0 1 4.3196899
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0043482 -0.0162276 0.038 rotation 0 0 1 4.4505896
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0021928 -0.0166563 0.038 rotation 0 0 1 4.5814893
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation -0.0000000 -0.0168000 0.038 rotation 0 0 1 4.7123890
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0021928 -0.0166563 0.038 rotation 0 0 1 4.8432887
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0043482 -0.0162276 0.038 rotation 0 0 1 4.9741884
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0064291 -0.0155212 0.038 rotation 0 0 1 5.1050881
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0084000 -0.0145492 0.038 rotation 0 0 1 5.2359878
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0102272 -0.0133283 0.038 rotation 0 0 1 5.3668874
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0118794 -0.0118794 0.038 rotation 0 0 1 5.4977871
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0133283 -0.0102272 0.038 rotation 0 0 1 5.6286868
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0145492 -0.0084000 0.038 rotation 0 0 1 5.7595865
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0155212 -0.0064291 0.038 rotation 0 0 1 5.8904862
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0162276 -0.0043482 0.038 rotation 0 0 1 6.0213859
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+Pose { translation 0.0166563 -0.0021928 0.038 rotation 0 0 1 6.1522856
+          children [ Shape { appearance PBRAppearance { baseColor 0.17 0.17 0.16 roughness 0.45 metalness 0  }
+            geometry Box { size 0.0009 0.00055 0.009 } } ] }
+
+      ] name "campione_b"
+      # Presa vincolata dal supervisore; nessun modello di attrito del flacone.
+    }
+DEF DOC_ARM DocArm5 {
+  hidden position_0_0 -0.53059759
+  hidden rotation_1 0 0 1 -0.53059759
+  hidden position_1_0 -1.59848037
+  hidden rotation_2 0 1 0 -0.027684370000000014
+  hidden position_2_0 1.30531537
+  hidden rotation_3 0 1 0 1.30531537
+  hidden position_3_0 -1.27762966
+  hidden rotation_4 0 1 0 0.2931663400000002
+  hidden position_4_0 -1.57079633
+  hidden rotation_5 0 0 1 -1.57079633
+  translation 0 0 0.77
+  name "DOC laboratorio (5 assi)"
+  controller "doc_laboratorio" supervisor TRUE
+  toolSlot [
+    DocLabGripper { }
+    DEF LAB_TCP Solid { translation 0 0.17696 0 rotation 1 0 0 -1.5707953071795862 name "lab_tcp" }
+  ]
+}

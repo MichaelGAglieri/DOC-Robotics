@@ -1,0 +1,48 @@
+{
+  "versione": 1,
+  "scenario": "laboratorio",
+  "arm_dof": 5,
+  "joint_names": [
+    "shoulder_pan_joint",
+    "shoulder_lift_joint",
+    "elbow_joint",
+    "wrist_1_joint",
+    "wrist_2_joint"
+  ],
+  "campioni": {
+    "campione_a": {
+      "nome": "campione a",
+      "supporto_iniziale": "supporto_a",
+      "descrizione": "Contenitore dimostrativo leggero e vuoto"
+    },
+    "campione_b": {
+      "nome": "campione b",
+      "supporto_iniziale": "supporto_b",
+      "descrizione": "Contenitore dimostrativo leggero e vuoto"
+    }
+  },
+  "postazioni": {
+    "supporto_a": {
+      "nome": "supporto a",
+      "funzione": "supporto iniziale"
+    },
+    "supporto_b": {
+      "nome": "supporto b",
+      "funzione": "supporto iniziale"
+    },
+    "postazione_1": {
+      "nome": "postazione 1",
+      "funzione": "postazione di lavoro"
+    },
+    "postazione_2": {
+      "nome": "postazione 2",
+      "funzione": "postazione di lavoro"
+    }
+  },
+  "azioni": [
+    "TRANSFER",
+    "DIAGNOSI",
+    "ABORT"
+  ],
+  "nota": "Catalogo statico. Le posizioni correnti arrivano da Webots, mai dai valori iniziali. Nessuna procedura chimica o biologica."
+}

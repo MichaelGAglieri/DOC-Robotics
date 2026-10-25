@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>doc_lab</name><version>0.1.0</version>
+  <description>Coordinatore ROS 2 del laboratorio Webots DOC a cinque assi.</description>
+  <maintainer email="177836445+MichaelGAglieri@users.noreply.github.com">Michael</maintainer>
+  <license>GPL-3.0-only</license>
+  <exec_depend>rclpy</exec_depend><exec_depend>std_msgs</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>launch</exec_depend><exec_depend>launch_ros</exec_depend>
+  <exec_depend>python3-numpy</exec_depend><exec_depend>python3-requests</exec_depend>
+  <test_depend>python3-pytest</test_depend>
+  <export><build_type>ament_python</build_type></export>
+</package>

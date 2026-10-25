@@ -1,4 +1,0 @@
-#!/bin/zsh
-source /opt/ros/jazzy/setup.zsh
-cd "$(dirname "$0")"
-python3 -u SixTetarm_controller.py

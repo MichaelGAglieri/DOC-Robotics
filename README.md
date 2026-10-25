@@ -1,79 +1,58 @@
-# SixTetarm-RoboticArm v1.0
-An open source Custom 6-DOF robotic arm based on Toolboxrobotics project Collaborative Robotic Arm EB-15 — stepper motors nema 17 on RAMPS 1.4, driver a4988, arduino mega, AccelStepper firmware, ROS 2 Jazzy bridge, Webots R2025a simulation with UR3e model.
+# D.O.C. — Desktop Operations Companion
 
-# WORK IN PRORESS 🚧
-**This project is actively under development.** 
+> **Work in progress.** This project is under active development. Hardware, software, interfaces and configuration can change. See the [roadmap](ROADMAP.md).
 
-The robot is not yet complete — I'm still working on:
-- Hardware assembly (J6 joint pending, adaptive)
-  
-- Full firmware validation
-   
-- End-to-end testing
+D.O.C. is my five-axis desktop robotics project, built to connect mechanical assembly, simulation and software control. This repository contains the current ROS 2 laboratory scenario, its Webots model, reproducible tests and the reference hardware documentation for macOS Apple Silicon.
 
-**Open to suggestions and collaboration!** Feel free to open issues, propose improvements, or share your ideas. Pull requests welcome!
+The physical arm uses the **EB-15 mechanical design by ToolBox Robotics**. My work covers the five-axis integration, PETG printing and assembly, wiring, firmware/app iteration, simulation setup, ROS 2 coordination and bench tests. Development used AI assistance; the external designs and dependencies are credited separately in [AUTHORS.md](AUTHORS.md) and [THIRD_PARTY.md](THIRD_PARTY.md).
 
-# Repository structure
-SixTetarm-RoboticArm/
+## What is included
 
-├── README.md # Main project documentation
+- ROS 2 Jazzy through RoboStack/Pixi: local knowledge, explicit commands, scene validation, mission planning and a local execution journal.
+- A Webots R2025a laboratory: two demonstration containers, four supports, five-axis motion and a kinematic gripper.
+- Geometry, protocol and mission tests.
+- Reference wiring and configuration for Mega 2560, RAMPS 1.4, A4988 and an external DM542.
 
-├── LICENSE # Project license (CC BY-NC-SA 4.0)
+The companion macOS control application and its stable firmware are in [Robot-Console](https://github.com/MichaelGAglieri/Robot-Console). It records, edits, enables/disables and replays poses; it also offers an optional local Ollama assistant and a ROS 2 observer.
 
-│
+## Start the simulation
 
-├── 📁 3D Structures/ # 3D printable STL files
+Requirements: macOS Apple Silicon, [Pixi](https://pixi.sh), and [Webots R2025a](https://github.com/cyberbotics/webots/releases/tag/R2025a). Install the environment and fetch the pinned upstream assets once:
 
-│ ├──📁  Planetary_Gear_EBA17/
+```sh
+pixi install
+pixi run assets
+pixi run test
+pixi run webots
+```
 
-│ ├── 📁 Planetary_Gear_EB17s/
+Press Play in Webots. In another terminal, from this directory:
 
-│ ├── 📁 Collaborative Robot Arm eb-15/
+```sh
+pixi run doc
+```
 
-│ └── 📁 Adaptive Robot Gripper EBG-20/
+Use [QUICKSTART.md](QUICKSTART.md) for commands, mission planning and shutdown. `pixi run finestre` opens the macOS working windows; it does not start physical robot control. Voice and a locally installed Ollama model are optional.
 
-│ 
+## Scope of the evidence
 
-│
+DocArm5 is derived from **Cyberbotics’ UR3e model**, with the sixth joint removed. It is a demonstration model, not a calibrated digital twin of the physical EB-15-based arm. The gripper uses a kinematic attachment in simulation; simulation outcomes are not measurements of real grip force, payload capacity or collision safety.
 
-├── 📁 Codes/ # Software and firmware
+The physical configuration has no automatic homing, encoders or force sensing in this release. Never send the simulated UR3e-derived waypoints to the physical arm. The firmware/app count commanded pulses; the operator establishes HOME.
 
-│ ├── 📁 Bridge Ros 2/robot_bridge/
+## Project layout
 
-│ ├── 📁 FirmwareROBOT/ # NOT READY
+| Path | Purpose |
+| --- | --- |
+| `architetture/laboratorio/ros2_ws/src/doc_lab` | Current ROS 2 package and its tests |
+| `webots_sim` | Current world, controller, parameters and model |
+| `scripts` | Generators, upstream asset setup and simulation client |
+| `test` | Scene/geometry tests |
+| `hardware` | Reference configuration and original design links |
+| `docs` | Architecture and validation notes |
 
-│ ├── 📁 SixTetarm_controller/#webots controller, TESTED, WAIT FOR UPGRADE
+The earlier drawer scenario, old firmware experiments, installed environments, private runtime data and development archives are intentionally outside this release. Windows support is not provided in this version.
 
-│ ├── 📁 Test_stepper_engine_nema/ TESTED, WORK!
+## License
 
-│ ├── 📁 Worlds/ # Webots world
-
-│ └── Readme.txt 
-
-│
-
-├── 📁 Sliced Models/
-
-│ ├── Planetary gears EBA17s.3mf
-
-│ ├── Planetary gears EBA17.3mf
-
-│ ├── StrutturaBase.3mf
-
-│ └── Readme.txt
-
-│
-
-└── 📁 Schematics,Datasheets/ # Hardware documentation
-
-│ └── (schematics, wiring diagrams, PDFs)
-
-
-
-Project link: https://toolboxrobotics.com/robotic-arm-eb15
-License: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-Autor of original project: Toolboxrobotics
-
-Complete presentation link of my work : https://prezi.com/p/edit/6eof52t2l8xl/
-
-My contribution is the code, the simulation setup and the tips for 3d print.
+Original code in this release is GPL-3.0-only. Cyberbotics-derived material retains Apache-2.0 and its notices. The original ToolBox Robotics CAD is linked rather than redistributed. See [LICENSE](LICENSE), [THIRD_PARTY.md](THIRD_PARTY.md) and [AUTHORS.md](AUTHORS.md).

@@ -1,0 +1,315 @@
+{
+  "version": "R2025a",
+  "assets": [
+    {
+      "path": "projects/appearances/protos/OldSteel.proto",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/OldSteel.proto",
+      "sha256": "1e1b15289f8c4171284074f4c48c4ed269b4961a4a09bb4d1b1c1b345c311be8"
+    },
+    {
+      "path": "projects/appearances/protos/ScrewThread.proto",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/ScrewThread.proto",
+      "sha256": "987e0d56e586f6ddc0b2f618b4698b56f44516238dd0cdeabd4a0347d3bf2505"
+    },
+    {
+      "path": "projects/appearances/protos/textures/old_steel/old_steel_base_color.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_base_color.jpg",
+      "sha256": "9d8baefa0bbea8705d05647ef65b26b8f2f1ba07db9d39adc0d0cf8244b4d76a"
+    },
+    {
+      "path": "projects/appearances/protos/textures/old_steel/old_steel_metalness.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_metalness.jpg",
+      "sha256": "de80c5afea7a1f445f0d2bc7f83b3757f9eb616b0f6fcd59675d56882fc653c4"
+    },
+    {
+      "path": "projects/appearances/protos/textures/old_steel/old_steel_normal.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_normal.jpg",
+      "sha256": "7b62dc4ae5bd2fc4c297157c463c2836fd1ea1611e743c680f33c725265ef435"
+    },
+    {
+      "path": "projects/appearances/protos/textures/old_steel/old_steel_roughness.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_roughness.jpg",
+      "sha256": "8397d0de9496e78ebcd7b218b4816d5d8fa383c9a9f1765d931fc0df5932b0b0"
+    },
+    {
+      "path": "projects/appearances/protos/textures/screw_thread/screw_thread_base_color.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_base_color.jpg",
+      "sha256": "a86765be53058e2364acf3196998865e702a0cdd059a2c478947ee28b374b4d4"
+    },
+    {
+      "path": "projects/appearances/protos/textures/screw_thread/screw_thread_normal.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_normal.jpg",
+      "sha256": "d91fcfd1e2fa6f77784c72464b49e96d9b477e775861b5b694c4b2a2c4cf73af"
+    },
+    {
+      "path": "projects/appearances/protos/textures/screw_thread/screw_thread_occlusion.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_occlusion.jpg",
+      "sha256": "31d63b395bf4117e0e9b3e3233ccfb324f91f5e16b9f8a88fabbb022d2f80ef7"
+    },
+    {
+      "path": "projects/appearances/protos/textures/screw_thread/screw_thread_roughness.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_roughness.jpg",
+      "sha256": "49865d4f1669335705a8ed2042bb6b46a3465d7af8ae9af8004b3e342dca4c21"
+    },
+    {
+      "path": "projects/default/worlds/textures/cubic/factory_back.hdr",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/default/worlds/textures/cubic/factory_back.hdr",
+      "sha256": "573bb4ebf122de5a615366d1fc6eebf908a0c4b5bb8293b503e509bdf09a47e1"
+    },
+    {
+      "path": "projects/default/worlds/textures/cubic/factory_bottom.hdr",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/default/worlds/textures/cubic/factory_bottom.hdr",
+      "sha256": "ad888db290c14db991e05011bf79e7f0eaa69156d37d2fd8ab921e24e4f5b89c"
+    },
+    {
+      "path": "projects/default/worlds/textures/cubic/factory_front.hdr",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/default/worlds/textures/cubic/factory_front.hdr",
+      "sha256": "753bdbcc442ad333388163dd7db44a8648494ba0b8963acf6b50706e689d1124"
+    },
+    {
+      "path": "projects/default/worlds/textures/cubic/factory_left.hdr",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/default/worlds/textures/cubic/factory_left.hdr",
+      "sha256": "37ded2aa41eb4505ad4aa68b9b7d59fb23f1047af7e59c72e0fcfa10bef2e4cf"
+    },
+    {
+      "path": "projects/default/worlds/textures/cubic/factory_right.hdr",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/default/worlds/textures/cubic/factory_right.hdr",
+      "sha256": "972cb4c1bc4330709650edb641c2a77591ccd9c72742e83900bd428f06fb5278"
+    },
+    {
+      "path": "projects/default/worlds/textures/cubic/factory_top.hdr",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/default/worlds/textures/cubic/factory_top.hdr",
+      "sha256": "50a905aeb3b9b5138a102061e45bb72b1f4cf820df4850fffa89a067ab2eca6b"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/base_link_0.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/base_link_0.obj",
+      "sha256": "059e6336a1340c440eef90c7f9323a9982776de3c2f0c02858d79eb03c75603a"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/base_link_1.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/base_link_1.obj",
+      "sha256": "f6b849d3378a0d18db45d6faa0735b10b758df5bfe7b988bb98dd361f95a3732"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_0.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_0.obj",
+      "sha256": "e5121849196c6a0d55a30ffd8d94c8aceba35ddc7acc55a83abd5d8a8bdc93af"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_1.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_1.obj",
+      "sha256": "d3d276199d543a4b3949db2747a689a5d34f676e98d9ab439af1591d4cce105c"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_2.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_2.obj",
+      "sha256": "16f2131dc17447f3afd44dab721dac902a2556205a7ef347b1ed9c0d8d971a7c"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_3.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_3.obj",
+      "sha256": "e843a0ab974eaf046ff060f401022cf8e3ddc759e8063fc4690577b2e3f334ab"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_4.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_4.obj",
+      "sha256": "10732d9c67b0c8cc8a9048fc379ff44cd0402650c89a66edaca90ba20cfe6fe4"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_5.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_5.obj",
+      "sha256": "2144508327b4dec7d5011682c7d873ca77605a5a7d9254ff57c13cdbc939c543"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_6.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_6.obj",
+      "sha256": "dffffd83c3dc4f6f47dc657c4d303f8a2c54d07edd92563e4bbafbe38317a97a"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_7.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/forearm_link_7.obj",
+      "sha256": "27d55d8cc099de519ef756ce08b48510fb27131c31f2c5fe65186b7ab6ea7dfe"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/screw.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/screw.obj",
+      "sha256": "25d75b178dcac9cd5e1e634e8cd90ff7f8b7eb3194b890608ea8189265b4e51e"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/shoulder_link_0.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/shoulder_link_0.obj",
+      "sha256": "f871119103722256302ed29c2e2f3d5339fdda469b1465b4257f097dd187f781"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/shoulder_link_1.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/shoulder_link_1.obj",
+      "sha256": "babeb285af17ff3597b04c563c822d13a6bea0363f101247b079d694ea883768"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/shoulder_link_2.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/shoulder_link_2.obj",
+      "sha256": "6188de7f8e049197ce1be2c60e21a6e319344e9d2870331fc1efa2e8f35f15f0"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/shoulder_link_3.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/shoulder_link_3.obj",
+      "sha256": "f4d39041a0aa2f683ca82ba1710b3b7af0b5d086ccf6613eb2f8f4fe045a2c9a"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_0.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_0.obj",
+      "sha256": "b11ca312390f256f23bc05c84da59a82de09ba79059dbcbdad8927a7e02f1dfd"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_1.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_1.obj",
+      "sha256": "978555f57cb2bff578ad04f4dbb934c96a02887328e4cab9bec86cb93eab1fb3"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_10.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_10.obj",
+      "sha256": "efa159d89f4c564ee2a2c7199b887482d3f08fdcf3451a9e8750e496e4504ab3"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_2.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_2.obj",
+      "sha256": "dfea767d553c7624a6d99505ccb610856ef36494c0f2cebab6bf73ce4790461e"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_3.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_3.obj",
+      "sha256": "3aeea69c60a77fe1485ca51ca1a26b9cd4127b51673b03a598c7979ed5e75624"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_4.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_4.obj",
+      "sha256": "7925407e1ce26f3f12d83a0a985ba07d090f8eb8303ada98499c315280eb825f"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_5.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_5.obj",
+      "sha256": "d560b8a29a13c4e8632231e681e9351596cef83428e4549971ce258d89361f26"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_6.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_6.obj",
+      "sha256": "0849ab589f91abd71ddcff4f4fae958c17c173d2474bdcfd84ef404cd7e3143c"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_7.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_7.obj",
+      "sha256": "b975559c0c0400cf2c4d94270e9d989c114a977a226d8aefccaa04d33a326189"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_8.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_8.obj",
+      "sha256": "f14bdebbd96099b2cd7cb91e247b14aedce3af40fbe302a5248973e7a46219c4"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_9.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/upper_arm_link_9.obj",
+      "sha256": "97a96280a3921b5f1b0cab6e7eb062a3c0f8fc03416c9e57132e16df41116ce1"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/wrist_1_link_0.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/wrist_1_link_0.obj",
+      "sha256": "b1c3e515e5272cebf57428ca1d856090f12285aac2d5a2e120f2cef7d2170923"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/wrist_1_link_1.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/wrist_1_link_1.obj",
+      "sha256": "9e9824070ccb83aae26f4cdd2e458cdb9d87a4d7870d11a6f2838e072b09d2e4"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/wrist_1_link_2.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/wrist_1_link_2.obj",
+      "sha256": "a8aeeb206356620149146e994a68fb624099b6f008e262571bf55dd2b51ba626"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/wrist_1_link_3.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/wrist_1_link_3.obj",
+      "sha256": "7b3312b2819c7f118a41dc7323b28443f35795bb82e689772e4e1e74eccac48c"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/wrist_2_link_0.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/wrist_2_link_0.obj",
+      "sha256": "3b44e01a67e108373b41326386dbe989b6e2cbc8b029edbec9a01b5e7c96d1d2"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/wrist_2_link_1.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/wrist_2_link_1.obj",
+      "sha256": "439b0201c730f45a2c3f0b49a3dbff293e4ece7d0fb8c63edebb1a495f876730"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/wrist_2_link_2.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/wrist_2_link_2.obj",
+      "sha256": "9519b0e47deaced933668f503654d87b1a0491c5d3d75edb45f03c1a0209a836"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/meshes/wrist_2_link_3.obj",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/meshes/wrist_2_link_3.obj",
+      "sha256": "01c9a4aebff19d2834208c78e674b0a8a3719081c55c9e35b445ae4341bf9081"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/textures/normal_0.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/textures/normal_0.jpg",
+      "sha256": "dc9f72abb6c17f7b68a629a4a16834590fbb260a1713032a8c1f1176cbbcd4c5"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/textures/normal_1.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/textures/normal_1.jpg",
+      "sha256": "ac8eacd988ff5aa2a849eda79d6852649e38d5602fda4748f106c28c18b53120"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/textures/normal_2.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/textures/normal_2.jpg",
+      "sha256": "010d745f7af1cb1c2dbfac1ab78e1fd6974ba8d9fb3055fd07e757647f0c00d1"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/textures/normal_3.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/textures/normal_3.jpg",
+      "sha256": "37ac8f7527ba6f765bd895fdb21608325e13f68ee6a8d9aaaf54936fc2b3906d"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/textures/normal_4.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/textures/normal_4.jpg",
+      "sha256": "fab226db804c023cd9c294e9301c3d937b699cc36b56b65b6cd9192064627019"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/textures/normal_5.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/textures/normal_5.jpg",
+      "sha256": "5144394f77fd1ff0cf313c991f809e4214024b09957ec8de2e576eec2782f845"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/textures/occlusion_0.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/textures/occlusion_0.jpg",
+      "sha256": "32825d552c38c768f047a4288ac81e7964943452697f6459230a775e63cd7055"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/textures/occlusion_1.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/textures/occlusion_1.jpg",
+      "sha256": "05be737322c7490219c8b01699abef6dfc9d8e2cd472fa7196f44252eb9a7289"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/textures/occlusion_2.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/textures/occlusion_2.jpg",
+      "sha256": "0228badb98b1c275396948437ff6f40a497ca675db2a6e82b70923d2df819a1f"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/textures/occlusion_3.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/textures/occlusion_3.jpg",
+      "sha256": "5846f7186578bc038e7c11746307d525598e279a26425098ffafc62127ec4903"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/textures/occlusion_4.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/textures/occlusion_4.jpg",
+      "sha256": "b6f0baec6d5294b50c8addf4a8074c84c795f3ed32f438ed8f5143875e3f09b5"
+    },
+    {
+      "path": "projects/robots/universal_robots/protos/UR3e/textures/occlusion_5.jpg",
+      "source": "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/universal_robots/protos/UR3e/textures/occlusion_5.jpg",
+      "sha256": "a42e30f31dcf1975624697837816eedc56d6090684947f49fc22846f2cdb9cc4"
+    }
+  ]
+}

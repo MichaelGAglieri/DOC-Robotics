@@ -1,0 +1,36 @@
+# Local environments and build products
+.pixi/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+install/
+log/
+*.egg-info/
+.DS_Store
+.env
+.env.*
+!.env.example
+# User conversations, poses and runtime reports
+sequenza.json
+sequenza.tmp
+limiti.json
+limiti.tmp
+*.sqlite3*
+*.db
+*.log
+controller.lock
+ia_settings.json
+output/
+# Model weights and compiled applications
+*.onnx
+*.safetensors
+*.gguf
+*.app/
+*.dmg
+*.zip
+# Assets fetched from the pinned upstream manifest
+webots_sim/protos/vendor/webots/projects/
+webots_sim/worlds/.*.wbproj

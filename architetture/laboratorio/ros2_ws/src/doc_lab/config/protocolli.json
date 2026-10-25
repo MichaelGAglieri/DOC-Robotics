@@ -1,0 +1,28 @@
+{
+  "versione": 1,
+  "protocolli": {
+    "prepara": {
+      "titolo": "Prepara le postazioni",
+      "alias": ["prepara entrambi i campioni", "porta entrambi i campioni alle postazioni"],
+      "fasi": [{"nome": "Preparazione", "obiettivi": {"campione_a": "postazione_1", "campione_b": "postazione_2"}}]
+    },
+    "riordina": {
+      "titolo": "Riordina il laboratorio",
+      "alias": ["riporta entrambi i campioni ai supporti"],
+      "fasi": [{"nome": "Riordino", "obiettivi": {"campione_a": "supporto_a", "campione_b": "supporto_b"}}]
+    },
+    "ciclo completo": {
+      "titolo": "Ciclo completo di laboratorio",
+      "alias": ["porta entrambi i campioni alle postazioni e poi riportali ai supporti"],
+      "fasi": [
+        {"nome": "Preparazione", "obiettivi": {"campione_a": "postazione_1", "campione_b": "postazione_2"}},
+        {"nome": "Riordino", "obiettivi": {"campione_a": "supporto_a", "campione_b": "supporto_b"}}
+      ]
+    },
+    "scambia supporti": {
+      "titolo": "Scambio dei supporti",
+      "alias": ["scambia i campioni sui supporti"],
+      "fasi": [{"nome": "Scambio", "obiettivi": {"campione_a": "supporto_b", "campione_b": "supporto_a"}}]
+    }
+  }
+}
