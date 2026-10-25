@@ -174,13 +174,32 @@ def test_abort_freezes_joint_targets_and_retains_payload(module):
     assert all(m.target == m.position for m in robot.motors.values())
 
 
+def assert_same_vrml(actual, generated):
+    """Keep node/text equality; allow sub-picometre libm differences across OSes."""
+    import re
+    numeric = r'([-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?)'
+    a, b = re.split(numeric, actual), re.split(numeric, generated)
+    assert a[::2] == b[::2], 'VRML structure differs'
+    assert [float(v) for v in a[1::2]] == pytest.approx(
+        [float(v) for v in b[1::2]], rel=0, abs=1e-12)
+
+
+def test_vrml_comparison_rejects_geometric_and_structural_changes():
+    assert_same_vrml('Pose { translation -0.015499999999999993 0 0 }',
+                     'Pose { translation -0.015499999999999995 0 0 }')
+    with pytest.raises(AssertionError):
+        assert_same_vrml('Pose { translation 0 0 0 }', 'Pose { translation 0.001 0 0 }')
+    with pytest.raises(AssertionError):
+        assert_same_vrml('Pose { translation 0 0 0 }', 'Solid { translation 0 0 0 }')
+
+
 def test_world_and_proto_are_generated_from_config():
     sys.path.insert(0, str(ROOT/'scripts'))
     import genera_laboratorio
-    assert (ROOT/'webots_sim/worlds/laboratorio.wbt').read_text() == genera_laboratorio.world_source(CONFIG)
-    assert (ROOT/'webots_sim/protos/DocLabGripper.proto').read_text() == genera_laboratorio.gripper_source()
+    assert_same_vrml((ROOT/'webots_sim/worlds/laboratorio.wbt').read_text(), genera_laboratorio.world_source(CONFIG))
+    assert_same_vrml((ROOT/'webots_sim/protos/DocLabGripper.proto').read_text(), genera_laboratorio.gripper_source())
     import genera_doc5
-    assert (ROOT/'webots_sim/protos/DocArm5.proto').read_text() == genera_doc5.source()
+    assert_same_vrml((ROOT/'webots_sim/protos/DocArm5.proto').read_text(), genera_doc5.source())
 
 
 def test_five_axis_model_has_no_terminal_joint(module):
