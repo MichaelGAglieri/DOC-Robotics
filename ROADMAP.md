@@ -18,6 +18,6 @@ The sensor selection, number, placement, electrical interfaces and integration a
 - Expose measured feedback and sensor health in the ROS 2 architecture and control app.
 - Revisit calibration, state estimation, limits and playback when measured feedback becomes available.
 - Improve hardware configuration, reproducibility and validation evidence as the robot changes.
-- Evaluate a Windows version after the current macOS release is consolidated. No Windows build is shipped in this release.
+- Evaluate a Windows & Linux version after the current macOS release is consolidated. No Windows or Linux build is shipped in this release.
 
 The present configuration still relies on an operator-established HOME and commanded pulse counts. See the current hardware and validation documentation for implemented capabilities.
